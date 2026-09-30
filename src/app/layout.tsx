@@ -103,6 +103,14 @@ export default function RootLayout({
             })(window,document,'script','dataLayer','GTM-M9G2945W');
           `}
         </Script>
+
+        {/* Google AdSense Auto Ads */}
+        <Script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5681987486514137"
+          crossOrigin="anonymous"
+          strategy="afterInteractive"
+        />
       </head>
       <body>
         {/* Google Tag Manager (noscript) */}
