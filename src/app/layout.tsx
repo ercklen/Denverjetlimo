@@ -107,7 +107,7 @@ export default function RootLayout({
         {/* Google AdSense Auto Ads */}
         <Script
           async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5681987486514137"
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2612536732942195"
           crossOrigin="anonymous"
           strategy="afterInteractive"
         />
