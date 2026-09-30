@@ -1,9 +1,11 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Script from "next/script";
 
 export default function ContactPage() {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const closeMenu = () => setMenuOpen(false);
   return (
     <div className="min-h-screen bg-[#0a0a0a] text-white">
       
@@ -27,23 +29,23 @@ export default function ContactPage() {
       <li><a href="/#about-section">About</a></li>
     </ul>
     <a href="/#planner-section" className="btn-gold nav-cta" style={{"textDecoration": "none", "textAlign": "center"}}>Plan Your Ride</a>
-    <button className="hamburger" id="hamburger" aria-label="Open menu">
+    <button className="hamburger" aria-label="Open menu" onClick={() => setMenuOpen(true)}>
       <span></span><span></span><span></span>
     </button>
   </div>
 </nav>
 
 {/*  Mobile Menu  */}
-<div className="mobile-menu" id="mobileMenu">
-  <button className="mobile-close" id="mobileClose">✕</button>
+<div className={`mobile-menu${menuOpen ? " open" : ""}`}>
+  <button className="mobile-close" aria-label="Close menu" onClick={closeMenu}>✕</button>
   <ul>
-    <li><a href="/#airport-section">Airport Transfer</a></li>
-    <li><a href="/#fleet-section">Fleet</a></li>
-    <li><a href="/#destinations-section">Destinations</a></li>
-    <li><a href="/#corporate-section">Corporate</a></li>
-    <li><a href="/#about-section">About</a></li>
+    <li><a href="/#airport-section" onClick={closeMenu}>Airport Transfer</a></li>
+    <li><a href="/#fleet-section" onClick={closeMenu}>Fleet</a></li>
+    <li><a href="/#destinations-section" onClick={closeMenu}>Destinations</a></li>
+    <li><a href="/#corporate-section" onClick={closeMenu}>Corporate</a></li>
+    <li><a href="/#about-section" onClick={closeMenu}>About</a></li>
   </ul>
-  <a href="/#planner-section" className="btn-gold mobile-cta" style={{"textDecoration": "none", "textAlign": "center"}}>Plan Your Ride</a>
+  <a href="/#planner-section" className="btn-gold mobile-cta" style={{"textDecoration": "none", "textAlign": "center"}} onClick={closeMenu}>Plan Your Ride</a>
 </div>
 
 {/*  ─── HEADER ───  */}

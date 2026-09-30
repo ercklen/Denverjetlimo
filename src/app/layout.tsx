@@ -3,15 +3,21 @@ import Script from "next/script";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "DenveroTrip | Luxury Airport Transportation Denver",
+  title: "Denvertrip | Luxury Airport Transportation Denver",
   description: "Premium private airport transportation from Denver International Airport (DEN) to destinations throughout Denver and Colorado. Luxury SUVs, executive sedans, and stretch limousines.",
-  keywords: ["Denver airport transportation", "luxury car service Denver", "private transfer DEN", "Vail transportation", "Aspen car service", "Colorado executive transport", "DenveroTrip"],
-  authors: [{ name: "DenveroTrip" }],
-  creator: "DenveroTrip",
-  publisher: "DenveroTrip",
+  keywords: ["Denver airport transportation", "luxury car service Denver", "private transfer DEN", "Vail transportation", "Aspen car service", "Colorado executive transport", "Denvertrip"],
+  authors: [{ name: "Denvertrip" }],
+  creator: "Denvertrip",
+  publisher: "Denvertrip",
   metadataBase: new URL("https://denverotrip.com"),
   alternates: {
     canonical: "/",
+  },
+  icons: {
+    icon: [
+      { url: "/icon.svg", type: "image/svg+xml" },
+    ],
+    apple: "/icon.svg",
   },
   robots: {
     index: true,
@@ -25,18 +31,27 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "DenveroTrip | Luxury Airport Transportation",
-    description: "Premium private airport transportation from Denver International Airport.",
+    title: "Denvertrip | Luxury Airport Transportation",
+    description: "Premium private airport transportation from Denver International Airport. Serving Denver, Vail, Aspen, and all of Colorado.",
     url: "https://denverotrip.com/",
-    siteName: "DenveroTrip",
+    siteName: "Denvertrip",
     locale: "en_US",
     type: "website",
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 1024,
+        height: 1024,
+        alt: "Denvertrip - Luxury Airport Transportation Denver",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "DenveroTrip | Luxury Airport Transportation",
+    title: "Denvertrip | Luxury Airport Transportation",
     description: "Premium private airport transportation from Denver International Airport.",
-    creator: "@DenveroTrip",
+    creator: "@Denvertrip",
+    images: ["/og-image.jpg"],
   },
 };
 
