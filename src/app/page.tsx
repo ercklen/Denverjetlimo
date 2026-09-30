@@ -804,7 +804,7 @@ export default function HomePage() {
 
     {/* Phone CTA Block */}
     <a
-      href="tel:+17205550192"
+      href="tel:+17205680206"
       style={{
         display: 'flex',
         alignItems: 'center',
@@ -841,7 +841,7 @@ export default function HomePage() {
           Call to Reserve — Available 24/7
         </p>
         <p style={{ fontSize: '1.35rem', fontWeight: 700, color: '#fff', fontFamily: 'var(--font-serif, serif)', letterSpacing: '0.05em' }}>
-          +1 (720) 555-0192
+          +1 (720) 568-0206
         </p>
         <p style={{ fontSize: '0.72rem', color: 'var(--text-secondary)', marginTop: '2px' }}>
           Speak with a reservation specialist
