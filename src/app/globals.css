@@ -2,17 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
-/* ─── APEX CHAUFFEUR — LUXURY TRANSPORTATION ─── */
-/* Design System: Dark luxury with warm gold accents */
+/* ─── DENVER JET LIMO — LUXURY TRANSPORTATION ─── */
+/* Design System: Sleek dark luxury with platinum accents */
 
 /* ═══════════════════════════════════════════════
    CSS CUSTOM PROPERTIES
 ═══════════════════════════════════════════════ */
 :root {
-  --gold: #c9a84c;
-  --gold-light: #e4c97e;
-  --gold-dark: #a8883a;
-  --gold-glow: rgba(201, 168, 76, 0.2);
+  --gold: #b0b5b9; /* Platinum */
+  --gold-light: #e2e8f0;
+  --gold-dark: #828a93;
+  --gold-glow: rgba(176, 181, 185, 0.2);
   --black: #080808;
   --near-black: #0d0d0d;
   --charcoal: #1a1a1a;

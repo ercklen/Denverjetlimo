@@ -139,7 +139,7 @@ export default function HomePage() {
     <a href="#" className="nav-logo">
       <span className="logo-icon">✦</span>
       <div className="logo-text">
-        <span className="logo-main">DENVEROTRIP</span>
+        <span className="logo-main">DENVER JET LIMO</span>
         <span className="logo-sub">TRANSPORTATION</span>
       </div>
     </a>
@@ -490,7 +490,7 @@ export default function HomePage() {
 <section className="why-section section-pad" id="about-section">
   <div className="container">
     <div className="section-header reveal">
-      <p className="section-eyebrow">Why DenveroTrip</p>
+      <p className="section-eyebrow">Why Denver Jet Limo</p>
       <h2 className="section-heading">More Than<br /><em>a Ride.</em></h2>
     </div>
     <div className="why-grid">
@@ -569,7 +569,7 @@ export default function HomePage() {
   </div>
   <div className="experience-right">
     <div className="experience-content reveal">
-      <p className="section-eyebrow">The DenveroTrip Standard</p>
+      <p className="section-eyebrow">The Denver Jet Limo Standard</p>
       <h2 className="experience-heading">The Difference Is<br />in the <em>Details.</em></h2>
       <p className="experience-body">From immaculate vehicles to professional service, every part of the journey is designed around comfort, privacy and reliability. We don&apos;t just provide transportation — we deliver an experience.</p>
       <ul className="experience-features">
@@ -714,7 +714,7 @@ export default function HomePage() {
       <div className="footer-logo">
         <span className="logo-icon">✦</span>
         <div className="logo-text">
-          <span className="logo-main">DENVEROTRIP</span>
+          <span className="logo-main">DENVER JET LIMO</span>
           <span className="logo-sub">TRANSPORTATION</span>
         </div>
       </div>
@@ -771,7 +771,7 @@ export default function HomePage() {
     </div>
   </div>
   <div className="footer-bottom">
-    <p>© 2026 DenveroTrip. All Rights Reserved.</p>
+    <p>© 2026 Denver Jet Limo. All Rights Reserved.</p>
     <div className="footer-bottom-links">
       <a href="/privacy">Privacy Policy</a>
       <span>|</span>

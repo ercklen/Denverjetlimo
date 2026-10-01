@@ -3,13 +3,13 @@ import Script from "next/script";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Denvertrip | Luxury Airport Transportation Denver",
-  description: "Premium private airport transportation from Denver International Airport (DEN) to destinations throughout Denver and Colorado. Luxury SUVs, executive sedans, and stretch limousines.",
-  keywords: ["Denver airport transportation", "luxury car service Denver", "private transfer DEN", "Vail transportation", "Aspen car service", "Colorado executive transport", "Denvertrip"],
-  authors: [{ name: "Denvertrip" }],
-  creator: "Denvertrip",
-  publisher: "Denvertrip",
-  metadataBase: new URL("https://denverotrip.com"),
+  title: "Denver Jet Limo | Luxury Airport Transportation Denver",
+  description: "Premium private airport transportation from Denver International Airport (DEN) to destinations throughout Denver and Colorado. Luxury SUVs, Executive Jet Sprinters, and premium sedans.",
+  keywords: ["Denver airport transportation", "luxury car service Denver", "private transfer DEN", "Vail transportation", "Aspen car service", "Colorado executive transport", "Denver Jet Limo"],
+  authors: [{ name: "Denver Jet Limo" }],
+  creator: "Denver Jet Limo",
+  publisher: "Denver Jet Limo",
+  metadataBase: new URL("https://denverjetlimo.com"),
   alternates: {
     canonical: "/",
   },
@@ -31,10 +31,10 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Denvertrip | Luxury Airport Transportation",
+    title: "Denver Jet Limo | Luxury Airport Transportation",
     description: "Premium private airport transportation from Denver International Airport. Serving Denver, Vail, Aspen, and all of Colorado.",
-    url: "https://denverotrip.com/",
-    siteName: "Denvertrip",
+    url: "https://denverjetlimo.com/",
+    siteName: "Denver Jet Limo",
     locale: "en_US",
     type: "website",
     images: [
@@ -42,15 +42,15 @@ export const metadata: Metadata = {
         url: "/og-image.jpg",
         width: 1024,
         height: 1024,
-        alt: "Denvertrip - Luxury Airport Transportation Denver",
+        alt: "Denver Jet Limo - Luxury Airport Transportation Denver",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Denvertrip | Luxury Airport Transportation",
+    title: "Denver Jet Limo | Luxury Airport Transportation",
     description: "Premium private airport transportation from Denver International Airport.",
-    creator: "@Denvertrip",
+    creator: "@DenverJetLimo",
     images: ["/og-image.jpg"],
   },
 };
@@ -70,78 +70,9 @@ export default function RootLayout({
           rel="stylesheet"
         />
 
-        {/* Google Consent Mode v2 Default */}
-        <Script id="google-consent-mode" strategy="beforeInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            var stored = localStorage.getItem('cookie_consent');
-            var analytics = 'denied', ads = 'denied';
-            if (stored) {
-              try {
-                var p = JSON.parse(stored);
-                if (p.analytics) analytics = 'granted';
-                if (p.advertising) ads = 'granted';
-              } catch(e){}
-            }
-            gtag('consent', 'default', {
-              'analytics_storage': analytics,
-              'ad_storage': ads,
-              'ad_user_data': ads,
-              'ad_personalization': ads
-            });
-          `}
-        </Script>
-
-        {/* Google Tag Manager */}
-        <Script id="google-tag-manager" strategy="afterInteractive">
-          {`
-            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-            })(window,document,'script','dataLayer','GTM-M9G2945W');
-          `}
-        </Script>
-
-        {/* Google Ads Tag (gtag.js) */}
-        <Script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=AW-18485059764"
-          strategy="afterInteractive"
-        />
-        <Script id="google-ads-tag" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'AW-18485059764');
-          `}
-        </Script>
-
-        {/* Google AdSense Auto Ads */}
-        <Script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2612536732942195"
-          crossOrigin="anonymous"
-          strategy="afterInteractive"
-        />
       </head>
       <body>
-        {/* Google Tag Manager (noscript) */}
-        <noscript>
-          <iframe
-            src="https://www.googletagmanager.com/ns.html?id=GTM-M9G2945W"
-            height="0"
-            width="0"
-            style={{ display: "none", visibility: "hidden" }}
-          />
-        </noscript>
-
         {children}
-
-        {/* Central Tracking Script */}
-        <Script src="/tracking.js" strategy="lazyOnload" />
       </body>
     </html>
   );
