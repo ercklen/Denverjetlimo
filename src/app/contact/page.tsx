@@ -6,6 +6,14 @@ import Script from "next/script";
 export default function ContactPage() {
   const [menuOpen, setMenuOpen] = useState(false);
   const closeMenu = () => setMenuOpen(false);
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    // Trigger Google Ads Conversion on form submit
+    if (typeof window !== "undefined" && (window as any).gtag) {
+      (window as any).gtag('event', 'conversion', {'send_to': 'AW-18485059764/7eS2CIDmoY0dELTBru5E'});
+    }
+  };
+
   return (
     <div className="min-h-screen bg-[#0a0a0a] text-white">
       
@@ -93,7 +101,7 @@ export default function ContactPage() {
   </div>
   
   <div className="contact-form-panel">
-    <form className="contact-form" >
+    <form className="contact-form" onSubmit={handleSubmit}>
       <div className="field-row">
         <div className="form-group">
           <label>First Name</label>
