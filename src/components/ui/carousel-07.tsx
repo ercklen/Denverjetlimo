@@ -62,16 +62,16 @@ export const CarouselStacked = () => {
             <p className="text-xs text-[#b0b5b9] mt-2 uppercase tracking-widest">Drag to spin</p>
           </div>
         }
-        cardWidth={155}
-        cardHeight={210}
-        minScale={0.35}
-        radiusXRatio={0.38}
+        cardWidth={280}
+        cardHeight={380}
+        minScale={0.3}
+        radiusXRatio={0.42}
         centerXRatio={0.55}
-        radiusYRatio={0.38}
-        holdDuration={1800}
-        stepDuration={700}
-        spread={1.3}
-        className="h-[480px] bg-transparent"
+        radiusYRatio={0.4}
+        holdDuration={2000}
+        stepDuration={800}
+        spread={1.4}
+        className="h-[700px] bg-transparent"
       />
       <p className="text-xs text-[#b0b5b9] mt-2 uppercase tracking-widest pb-2">
         ← Drag to Explore Destinations →
