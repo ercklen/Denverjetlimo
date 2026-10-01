@@ -12,43 +12,39 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 const REAL_TESTIMONIALS = [
   {
     id: "testimonial-1",
-    name: "Michael Vance",
-    location: "Aspen Ski Resort Transfer",
+    name: "James Morgan",
+    location: "Executive Transfer · Downtown Denver",
     rating: 5,
     description:
-      "Arrived at DIA during a heavy snowstorm. Our chauffeur was waiting at baggage claim, guided us to a pristine 4WD Escalade with ski racks, and navigated I-70 to Aspen effortlessly. Flawless 5-star experience.",
-    avatarUrl:
-      "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&auto=format&fit=crop&q=80",
+      "Booked Denver Jet Limo for an early morning DIA pickup. The driver was already waiting at baggage claim holding my name sign. The Escalade was spotless, quiet, and I closed two deals on calls during the ride. This is the only way I travel now.",
+    avatarUrl: "/client_james_morgan.png",
   },
   {
     id: "testimonial-2",
-    name: "Sarah Jenkins",
-    location: "Corporate Travel / Cherry Creek",
+    name: "Sophia Carter",
+    location: "Vail Resort Transfer · Family Group",
     rating: 5,
     description:
-      "We rely on DenveroTrip for all our executive board transportation between Denver Airport and our headquarters in Cherry Creek. Punctual, discreet, and exceptionally professional every single time.",
-    avatarUrl:
-      "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&auto=format&fit=crop&q=80",
+      "We traveled as a family of 5 with all our ski gear to Vail. The Executive Jet Sprinter had more than enough room, the driver was patient and professional, and our flight delay was tracked automatically. Zero stress the entire trip.",
+    avatarUrl: "/client_sophia_carter.png",
   },
   {
     id: "testimonial-3",
-    name: "David Sterling",
-    location: "Vail Mountain Vacation",
+    name: "Robert Hayes",
+    location: "Corporate Program · Cherry Creek HQ",
     rating: 5,
     description:
-      "Traveling with 4 kids and 6 pieces of luggage is usually chaotic. The custom Sprinter van gave us immense comfort, complimentary drinks, and child car seats pre-installed. The gold standard of airport transfers.",
-    avatarUrl:
-      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&auto=format&fit=crop&q=80",
+      "Our firm has been using Denver Jet Limo for all executive board transfers for 6 months. Flawless every single time — punctual, discreet, immaculate vehicles. Their corporate program is exactly what a premium business needs.",
+    avatarUrl: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&auto=format&fit=crop&q=80",
   },
   {
     id: "testimonial-4",
-    name: "Elena Rostova",
-    location: "Breckenridge Event Chauffeur",
+    name: "Aisha Williams",
+    location: "Wedding Day · Breckenridge",
     rating: 5,
     description:
-      "Booked two vehicles for our wedding guests from DEN to Breckenridge. Flight delays were tracked automatically and drivers adjusted without any stress. Highly recommend DenveroTrip!",
-    avatarUrl:
-      "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&auto=format&fit=crop&q=80",
+      "Denver Jet Limo handled transportation for our entire wedding party from DEN to Breckenridge. Two vehicles, coordinated perfectly. The drivers were so kind and professional. They made the whole day feel like a VIP experience.",
+    avatarUrl: "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=400&auto=format&fit=crop&q=80",
   },
 ]
 
@@ -67,21 +63,21 @@ export function TestimonialsStack() {
                 role="article"
                 aria-labelledby={`card-${testimonial.id}-title`}
                 aria-describedby={`card-${testimonial.id}-content`}
-                className="bg-[#141414] border border-[#c9a84c]/25 rounded-2xl shadow-2xl p-6 sm:p-8 flex flex-col justify-between"
+                className="bg-[#0e0e0e] border border-[#b0b5b9]/20 rounded-2xl shadow-2xl p-6 sm:p-8 flex flex-col justify-between"
               >
                 <div className="flex flex-col items-center space-y-4 text-center">
                   <ReviewStars rating={testimonial.rating} />
                   <div className="mx-auto w-full text-base sm:text-lg text-[#e8e0d0] font-light italic">
-                    <blockquote>"{testimonial.description}"</blockquote>
+                    <blockquote>&quot;{testimonial.description}&quot;</blockquote>
                   </div>
                 </div>
                 <div className="flex items-center gap-4 pt-4 border-t border-white/10 mt-2">
-                  <Avatar className="size-12 border-2 border-[#c9a84c]">
+                  <Avatar className="size-12 border-2 border-[#b0b5b9]">
                     <AvatarImage
                       src={testimonial.avatarUrl}
                       alt={`Portrait of ${testimonial.name}`}
                     />
-                    <AvatarFallback className="bg-[#1f1f1f] text-[#c9a84c] font-bold">
+                    <AvatarFallback className="bg-[#1f1f1f] text-[#b0b5b9] font-bold">
                       {testimonial.name
                         .split(" ")
                         .map((n) => n[0])
@@ -89,10 +85,10 @@ export function TestimonialsStack() {
                     </AvatarFallback>
                   </Avatar>
                   <div className="text-left">
-                    <span className="block text-base font-semibold text-white font-serif tracking-tight">
+                    <span className="block text-base font-semibold text-white tracking-tight">
                       {testimonial.name}
                     </span>
-                    <span className="block text-xs text-[#c9a84c]">
+                    <span className="block text-xs text-[#b0b5b9]">
                       {testimonial.location}
                     </span>
                   </div>
@@ -102,7 +98,7 @@ export function TestimonialsStack() {
           </CardsContainer>
         </div>
       </ContainerScroll>
-      <p className="text-center text-xs text-[#c9a84c] uppercase tracking-widest -mt-16 pb-8">
+      <p className="text-center text-xs text-[#b0b5b9] uppercase tracking-widest -mt-16 pb-8">
         ↓ Scroll down to reveal all reviews ↓
       </p>
     </div>

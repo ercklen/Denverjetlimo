@@ -14,7 +14,7 @@ const fleetData = {
   suv: {
     type: "Luxury SUV",
     name: "Cadillac Escalade · GMC Yukon Denali · Chevrolet Suburban",
-    img: "fleet_escalade_suv_1786503952518.jpg",
+    img: "fleet_suv_black.png",
     desc: "Spacious luxury SUVs engineered for the highest standards of airport and executive transportation. Premium leather seating, climate control, and professional presentation.",
     specs: [
       { icon: "👤", label: "Up to 6 Passengers" },
@@ -26,7 +26,7 @@ const fleetData = {
   sedan: {
     type: "Executive Sedan",
     name: "Mercedes-Benz S-Class · BMW 7 Series · Cadillac CT6",
-    img: "fleet_executive_sedan_1786503961868.jpg",
+    img: "fleet_sedan_black.png",
     desc: "The pinnacle of refined executive transportation. Discreet, elegant and engineered for those who demand the highest level of comfort and privacy for every journey.",
     specs: [
       { icon: "👤", label: "Up to 3 Passengers" },
@@ -36,10 +36,10 @@ const fleetData = {
     features: ["Heated Massaging Seats","Ambient Lighting","Privacy Glass","Noise Isolation","Wi-Fi Hotspot","Premium Audio","Champagne Welcome","Door-to-Door Service"],
   },
   sprinter: {
-    type: "Sprinter Van",
+    type: "Executive Jet Sprinter",
     name: "Mercedes-Benz Sprinter Executive",
-    img: "vopt_sprinter.jpg",
-    desc: "Premium transportation for groups, corporate roadshows, and extended families. Spacious, comfortable, and luxurious for all your travel needs throughout Denver and Colorado.",
+    img: "fleet_jet_sprinter.png",
+    desc: "A private jet experience on wheels. Premium transportation for executive teams and groups, featuring reclining captain chairs, ambient mood lighting, and full connectivity.",
     specs: [
       { icon: "👥", label: "Up to 14 Passengers" },
       { icon: "🧳", label: "Up to 14 Bags" },
