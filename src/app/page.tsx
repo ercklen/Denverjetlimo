@@ -185,24 +185,24 @@ export default function HomePage() {
 {/*  ─── HERO ───  */}
 <section className="hero" id="home">
   <div className="hero-bg">
-    <img src="hero_den_airport_1786503942729.jpg" alt="Luxury black SUV at Denver International Airport" className="hero-img" />
+    <img src="hero_jet_limo.png" alt="Sleek black executive Jet Sprinter at Denver Airport" className="hero-img" />
     <div className="hero-overlay"></div>
   </div>
   <div className="hero-content reveal">
     <h1 className="hero-headline">
-      Luxury Transportation,<br />From Denver Airport<br /><em>to Wherever You&apos;re Going.</em>
+      Aviation-Grade Transportation,<br />From Denver Airport<br /><em>To Your Final Destination.</em>
     </h1>
-    <p className="hero-sub">Private airport transfers, executive transportation, and premium chauffeur service throughout Denver and Colorado.</p>
+    <p className="hero-sub">Experience private jet-level luxury on the ground. Executive transportation and premium chauffeur service throughout Denver and Colorado.</p>
     <div className="hero-ctas">
       <button className="btn-gold hero-btn-primary" onClick={scrollToPlanner}>Plan Your Ride</button>
       <a href="#fleet-section" className="btn-ghost hero-btn-secondary">Explore Our Fleet</a>
     </div>
     <div className="trust-bar">
-      <span>Professional Chauffeurs</span>
+      <span>Discreet Service</span>
       <span className="trust-dot">•</span>
-      <span>Premium Vehicles</span>
+      <span>Jet-Class Vehicles</span>
       <span className="trust-dot">•</span>
-      <span>Airport Transfers</span>
+      <span>Airport Specialists</span>
     </div>
   </div>
   <div className="hero-scroll-indicator">
@@ -427,7 +427,7 @@ export default function HomePage() {
       {/*  SUV Card  */}
       <div className="fleet-card reveal">
         <div className="fleet-img-wrap">
-          <img src="fleet_escalade_suv_1786503952518.jpg" alt="Cadillac Escalade Luxury SUV" className="fleet-img" />
+          <img src="fleet_suv_black.png" alt="Cadillac Escalade Luxury SUV" className="fleet-img" />
           <div className="fleet-img-overlay"></div>
           <div className="fleet-badge">Most Popular</div>
         </div>
@@ -447,7 +447,7 @@ export default function HomePage() {
       {/*  Sedan Card  */}
       <div className="fleet-card reveal">
         <div className="fleet-img-wrap">
-          <img src="fleet_executive_sedan_1786503961868.jpg" alt="Mercedes-Benz S-Class Executive Sedan" className="fleet-img" />
+          <img src="fleet_sedan_black.png" alt="Executive Sedan" className="fleet-img" />
           <div className="fleet-img-overlay"></div>
         </div>
         <div className="fleet-info">
@@ -463,21 +463,21 @@ export default function HomePage() {
           <button className="fleet-cta" onClick={() => openFleet("sedan")}>View Sedan <span>→</span></button>
         </div>
       </div>
-      {/*  Sprinter Van Card  */}
+      {/*  Jet Sprinter Van Card  */}
       <div className="fleet-card reveal">
         <div className="fleet-img-wrap">
-          <img src="vopt_sprinter.jpg" alt="Sprinter Van" className="fleet-img" />
+          <img src="fleet_jet_sprinter.png" alt="Executive Jet Sprinter" className="fleet-img" />
           <div className="fleet-img-overlay"></div>
         </div>
         <div className="fleet-info">
           <div className="fleet-info-top">
-            <h3 className="fleet-name">Sprinter Van</h3>
+            <h3 className="fleet-name">Executive Jet Sprinter</h3>
             <p className="fleet-models">Mercedes-Benz Sprinter Executive</p>
           </div>
-          <p className="fleet-desc">Premium transportation for groups, corporate roadshows and extended families. Spacious, comfortable, and luxurious.</p>
+          <p className="fleet-desc">A private jet experience on wheels. Premium transportation for executive teams, featuring reclining captain chairs and ambient lighting.</p>
           <div className="fleet-specs">
-            <span className="spec"><span className="spec-icon">👥</span> Up to 14 passengers</span>
-            <span className="spec"><span className="spec-icon">🥂</span> Amenities</span>
+            <span className="spec"><span className="spec-icon">👥</span> Up to 10 passengers</span>
+            <span className="spec"><span className="spec-icon">🥂</span> VIP Amenities</span>
           </div>
           <button className="fleet-cta" onClick={() => openFleet("sprinter")}>View Sprinter <span>→</span></button>
         </div>
@@ -616,7 +616,7 @@ export default function HomePage() {
 {/*  ─── CORPORATE ───  */}
 <section className="corporate-section section-pad" id="corporate-section">
   <div className="corporate-bg">
-    <img src="fleet_executive_sedan_1786503961868.jpg" alt="Executive corporate transportation" className="corp-bg-img" />
+    <img src="fleet_sedan_black.png" alt="Executive corporate transportation" className="corp-bg-img" />
     <div className="corp-overlay"></div>
   </div>
   <div className="container">

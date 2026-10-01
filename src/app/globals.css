@@ -34,12 +34,12 @@
   --shadow-md: 0 8px 32px rgba(0, 0, 0, 0.5);
   --shadow-lg: 0 16px 64px rgba(0, 0, 0, 0.6);
   --shadow-gold: 0 0 24px rgba(201, 168, 76, 0.15);
-  --radius-sm: 8px;
-  --radius-md: 12px;
-  --radius-lg: 20px;
-  --radius-xl: 28px;
-  --font-serif: 'Playfair Display', 'Georgia', serif;
-  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --font-serif: 'Outfit', sans-serif;
+  --font-sans: 'Roboto', sans-serif;
 }
 
 /* ═══════════════════════════════════════════════
@@ -135,7 +135,8 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 }
 
 .section-heading em {
-  font-style: italic;
+  font-style: normal;
+  font-weight: 800;
   color: var(--gold-light);
 }
 
@@ -595,13 +596,13 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 }
 
 .planner-card {
-  background: rgba(18, 18, 18, 0.95);
-  backdrop-filter: blur(30px);
-  -webkit-backdrop-filter: blur(30px);
-  border: 1px solid rgba(201, 168, 76, 0.15);
+  background: rgba(10, 10, 10, 0.7);
+  backdrop-filter: blur(40px);
+  -webkit-backdrop-filter: blur(40px);
+  border: 1px solid rgba(176, 181, 185, 0.25);
   border-radius: var(--radius-xl);
   padding: 48px;
-  box-shadow: 0 32px 80px rgba(0,0,0,0.6), 0 0 0 1px rgba(201,168,76,0.05);
+  box-shadow: 0 32px 80px rgba(0,0,0,0.8), 0 0 0 1px rgba(176, 181, 185, 0.1);
 }
 
 .planner-header {
