@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import Script from "next/script";
 import CarouselStacked from "@/components/ui/carousel-07";
-import TestimonialsStack from "@/components/ui/testimonials-stack";
+import TestimonialMarqueeDemo from "@/components/ui/marquee-01";
 import ColoradoCoverageMap from "@/components/ui/colorado-coverage-map";
 import HowItWorks from "@/components/ui/how-it-works";
 import { ExpandRouteMap } from "@/components/ui/expand-map";
@@ -608,7 +608,7 @@ export default function HomePage() {
       <p className="section-sub">Verified 5-star experiences from executive travelers, mountain visitors, and event organizers.</p>
     </div>
     <div className="w-full">
-      <TestimonialsStack />
+      <TestimonialMarqueeDemo />
     </div>
   </div>
 </section>
