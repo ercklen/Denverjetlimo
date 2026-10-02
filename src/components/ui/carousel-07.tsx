@@ -1,80 +1,137 @@
 "use client";
 
 import * as React from "react";
-import { HaloReel, type HaloReelItem } from "@/components/ui/halo-reel";
+import Autoplay from "embla-carousel-autoplay";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselPrevious,
+  CarouselNext,
+} from "@/components/ui/carousel";
 
-const DESTINATION_CARDS: HaloReelItem[] = [
+interface Destination {
+  image: string;
+  title: string;
+  description: string;
+  badge: string;
+  time: string;
+}
+
+const DESTINATIONS: Destination[] = [
   {
-    src: "/dest_vail_mountain_1786504003022.jpg",
-    alt: "Vail Mountain Resort",
+    image: "/dest_vail_mountain_1786504003022.jpg",
     title: "Vail & Beaver Creek",
-    subtitle: "~2h 30min · Ski Resort",
+    description: "World-class mountain resort transfers with luxury all-weather 4WD SUVs. Direct from DIA to the slopes.",
+    badge: "Ski Resort",
+    time: "~2h 30min",
   },
   {
-    src: "/dest_aspen_1786508288136.jpg",
-    alt: "Aspen Colorado",
+    image: "/dest_aspen_1786508288136.jpg",
     title: "Aspen & Snowmass",
-    subtitle: "~4h · Executive",
+    description: "Premier private chauffeur service to Aspen's luxury resorts and private residences. Discreet and seamless.",
+    badge: "Executive",
+    time: "~4h",
   },
   {
-    src: "/dest_breckenridge_1786508308049.jpg",
-    alt: "Breckenridge Mountain",
+    image: "/dest_breckenridge_1786508308049.jpg",
     title: "Breckenridge & Summit",
-    subtitle: "~1h 45min · Mountain",
+    description: "Direct airport transfers to Breckenridge, Keystone, and Copper Mountain in total comfort.",
+    badge: "Mountain",
+    time: "~1h 45min",
   },
   {
-    src: "/dest_downtown_denver_1786503992679.jpg",
-    alt: "Downtown Denver Skyline",
+    image: "/dest_downtown_denver_1786503992679.jpg",
     title: "Downtown Denver",
-    subtitle: "~45 min · Metro & DIA",
+    description: "Corporate travel, hotel drop-offs, and luxury transportation across the entire Denver Metro area.",
+    badge: "Metro & DIA",
+    time: "~45 min",
   },
   {
-    src: "/dest_boulder_1786508277820.jpg",
-    alt: "Boulder Colorado",
+    image: "/dest_boulder_1786508277820.jpg",
     title: "Boulder & Flatirons",
-    subtitle: "~1h 15min · VIP Service",
+    description: "Executive and university transfers between DIA and Boulder with premium, on-time chauffeur service.",
+    badge: "VIP Service",
+    time: "~1h 15min",
   },
   {
-    src: "/dest_colorado_springs_1786508297951.jpg",
-    alt: "Colorado Springs",
+    image: "/dest_colorado_springs_1786508297951.jpg",
     title: "Colorado Springs",
-    subtitle: "~2h 10min · Long Distance",
+    description: "Long-distance luxury rides to The Broadmoor, Garden of the Gods, and beyond. Always on time.",
+    badge: "Long Distance",
+    time: "~2h 10min",
   },
   {
-    src: "/dest_cherry_creek_1786508268407.jpg",
-    alt: "Cherry Creek Denver",
+    image: "/dest_cherry_creek_1786508268407.jpg",
     title: "Cherry Creek",
-    subtitle: "~50 min · Executive",
+    description: "Upscale transportation to Cherry Creek's premier shopping, dining, and residential neighborhoods.",
+    badge: "Executive",
+    time: "~50 min",
   },
 ];
 
 export const CarouselStacked = () => {
+  const plugin = React.useRef(
+    Autoplay({ delay: 3500, stopOnInteraction: true })
+  );
+
   return (
-    <div className="flex flex-col items-center w-full">
-      <HaloReel
-        items={DESTINATION_CARDS}
-        aria-label="Destinations carousel"
-        centerLabel={
-          <div className="text-center">
-            <p className="text-2xl font-bold text-white tracking-tight" style={{ fontFamily: "var(--font-serif)" }}>
-              Explore<br />Colorado
-            </p>
-            <p className="text-xs text-[#b0b5b9] mt-2 uppercase tracking-widest">Drag to spin</p>
-          </div>
-        }
-        cardWidth={280}
-        cardHeight={380}
-        minScale={0.3}
-        radiusXRatio={0.42}
-        centerXRatio={0.55}
-        radiusYRatio={0.4}
-        holdDuration={2000}
-        stepDuration={800}
-        spread={1.4}
-        className="h-[700px] bg-transparent"
-      />
-      <p className="text-xs text-[#b0b5b9] mt-2 uppercase tracking-widest pb-2">
-        ← Drag to Explore Destinations →
+    <div className="w-full px-4 md:px-12">
+      <Carousel
+        opts={{ align: "start", loop: true }}
+        plugins={[plugin.current]}
+        className="w-full"
+      >
+        <CarouselContent className="-ml-4">
+          {DESTINATIONS.map((dest, index) => (
+            <CarouselItem
+              key={index}
+              className="pl-4 basis-full sm:basis-1/2 lg:basis-1/3"
+            >
+              <div className="relative group overflow-hidden rounded-2xl border border-white/10 shadow-2xl h-[420px] cursor-pointer">
+                {/* Background Image */}
+                <img
+                  src={dest.image}
+                  alt={dest.title}
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+
+                {/* Dark gradient overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
+
+                {/* Top badges */}
+                <div className="absolute top-4 left-4 right-4 flex items-center justify-between">
+                  <span className="px-3 py-1 rounded-full bg-[#b0b5b9]/20 backdrop-blur-md border border-[#b0b5b9]/30 text-[#e2e8f0] text-xs font-semibold uppercase tracking-widest">
+                    {dest.badge}
+                  </span>
+                  <span className="px-3 py-1 rounded-full bg-black/50 backdrop-blur-md border border-white/10 text-white/80 text-xs font-medium">
+                    {dest.time}
+                  </span>
+                </div>
+
+                {/* Bottom content */}
+                <div className="absolute bottom-0 left-0 right-0 p-6">
+                  <h3 className="text-white font-bold text-xl mb-2 leading-tight" style={{ fontFamily: "var(--font-serif)" }}>
+                    {dest.title}
+                  </h3>
+                  <p className="text-white/70 text-sm leading-relaxed line-clamp-2">
+                    {dest.description}
+                  </p>
+                  <div className="mt-4 flex items-center gap-2 text-[#b0b5b9] text-xs font-semibold uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <span>✦</span>
+                    <span>Book This Route</span>
+                    <span>→</span>
+                  </div>
+                </div>
+              </div>
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+        <CarouselPrevious />
+        <CarouselNext />
+      </Carousel>
+      <p className="text-center text-xs text-[#b0b5b9] mt-6 uppercase tracking-widest">
+        ← Swipe to Explore All Destinations →
       </p>
     </div>
   );
