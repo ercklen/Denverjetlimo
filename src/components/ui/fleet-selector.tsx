@@ -4,36 +4,53 @@ import React, { useState } from "react";
 
 const FLEET = [
   {
-    id: "sedan",
-    tier: "Executive Sedan",
-    name: "Mercedes-Benz S-Class",
+    id: "maybach",
+    tier: "Flagship Sedan",
+    name: "Mercedes-Benz Maybach S-Class",
     orSimilar: "or similar",
+    description: "The pinnacle of chauffeured luxury. Extended wheelbase, handcrafted leather interior, and whisper-quiet cabin — designed for executives who demand the very best.",
+    features: ["Executive rear suite", "Massage seats", "Privacy glass", "Climate partition"],
     passengers: 3,
     luggage: 3,
-    img: "/fleet_sedan_black.png",
+    img: "/fleet_maybach.png",
   },
   {
-    id: "suv",
+    id: "escalade",
     tier: "Full-Size SUV",
     name: "Cadillac Escalade",
     orSimilar: "or similar",
+    description: "America's flagship luxury SUV. Commanding presence with expansive seating and generous cargo capacity — the preferred choice for airport transfers and executive travel.",
+    features: ["6 captain-chair seats", "Panoramic sunroof", "Bose sound system", "Heated & cooled seats"],
     passengers: 6,
     luggage: 6,
-    img: "/fleet_suv_black.png",
+    img: "/fleet_escalade.png",
+  },
+  {
+    id: "yukon",
+    tier: "Premium SUV",
+    name: "GMC Yukon Denali",
+    orSimilar: "or similar",
+    description: "Denali-grade luxury with a refined ride. Ideal for group transfers and mountain runs, delivering premium comfort across every Colorado route.",
+    features: ["6 passengers", "Magnetic ride control", "Denali trim package", "All-weather capability"],
+    passengers: 6,
+    luggage: 6,
+    img: "/fleet_yukon.png",
   },
   {
     id: "sprinter",
     tier: "Executive Van",
     name: "Mercedes-Benz Sprinter",
     orSimilar: "or similar",
-    passengers: 10,
-    luggage: 10,
-    img: "/fleet_jet_sprinter.png",
+    description: "A private jet experience on wheels. Custom captain's chairs, ambient mood lighting, and a club layout make this the ultimate group transfer vehicle for ski resorts and corporate events.",
+    features: ["Up to 14 passengers", "Captain's chairs", "Mood lighting", "Onboard WiFi"],
+    passengers: 14,
+    luggage: 12,
+    img: "/fleet_sprinter.png",
   },
 ];
 
 export function FleetSelector({ onReserve }: { onReserve?: () => void }) {
-  const [index, setIndex] = useState(1); // Start on SUV
+  const [index, setIndex] = useState(1);
   const [dir, setDir] = useState<"left" | "right" | null>(null);
   const [animating, setAnimating] = useState(false);
 
@@ -47,32 +64,36 @@ export function FleetSelector({ onReserve }: { onReserve?: () => void }) {
     setAnimating(true);
     setTimeout(() => {
       setIndex((i) =>
-        direction === "right"
-          ? (i + 1) % FLEET.length
-          : (i - 1 + FLEET.length) % FLEET.length
+        direction === "right" ? (i + 1) % FLEET.length : (i - 1 + FLEET.length) % FLEET.length
       );
       setDir(null);
       setAnimating(false);
     }, 320);
   };
 
+  const goTo = (i: number) => {
+    if (animating || i === index) return;
+    setDir(i > index ? "right" : "left");
+    setAnimating(true);
+    setTimeout(() => { setIndex(i); setDir(null); setAnimating(false); }, 320);
+  };
+
   return (
     <div
       className="relative w-full overflow-hidden select-none"
       style={{
-        background: "radial-gradient(ellipse 70% 60% at 50% 50%, rgba(100,75,10,0.35) 0%, #080808 65%)",
-        minHeight: "580px",
+        background: "radial-gradient(ellipse 75% 65% at 50% 45%, rgba(90,65,5,0.4) 0%, #080808 65%)",
+        minHeight: "620px",
       }}
     >
       {/* ── Left nav ── */}
       <button
         onClick={() => navigate("left")}
-        className="absolute left-4 md:left-10 top-1/2 -translate-y-1/2 flex items-center gap-2 group z-10"
+        className="absolute left-4 md:left-10 top-[40%] -translate-y-1/2 flex flex-col items-center gap-1 group z-10"
         aria-label={`Previous: ${prev.name}`}
-        style={{ cursor: "pointer" }}
       >
-        <span className="text-white/30 group-hover:text-white/80 transition-colors text-lg">‹</span>
-        <span className="hidden md:block text-[10px] font-semibold tracking-[0.2em] uppercase text-white/30 group-hover:text-white/70 transition-colors">
+        <span className="text-white/25 group-hover:text-white/70 transition-colors text-2xl leading-none">‹</span>
+        <span className="hidden md:block text-[9px] font-semibold tracking-[0.18em] uppercase text-white/25 group-hover:text-white/60 transition-colors text-center max-w-[80px]">
           {prev.tier}
         </span>
       </button>
@@ -80,49 +101,43 @@ export function FleetSelector({ onReserve }: { onReserve?: () => void }) {
       {/* ── Right nav ── */}
       <button
         onClick={() => navigate("right")}
-        className="absolute right-4 md:right-10 top-1/2 -translate-y-1/2 flex items-center gap-2 group z-10"
+        className="absolute right-4 md:right-10 top-[40%] -translate-y-1/2 flex flex-col items-center gap-1 group z-10"
         aria-label={`Next: ${next.name}`}
-        style={{ cursor: "pointer" }}
       >
-        <span className="hidden md:block text-[10px] font-semibold tracking-[0.2em] uppercase text-white/30 group-hover:text-white/70 transition-colors">
+        <span className="text-white/25 group-hover:text-white/70 transition-colors text-2xl leading-none">›</span>
+        <span className="hidden md:block text-[9px] font-semibold tracking-[0.18em] uppercase text-white/25 group-hover:text-white/60 transition-colors text-center max-w-[80px]">
           {next.tier}
         </span>
-        <span className="text-white/30 group-hover:text-white/80 transition-colors text-lg">›</span>
       </button>
 
       {/* ── Vehicle image ── */}
-      <div
-        className="flex items-center justify-center pt-20 pb-2 px-24"
-        style={{ minHeight: "380px" }}
-      >
+      <div className="flex items-center justify-center pt-16 pb-0 px-28" style={{ minHeight: "340px" }}>
         <img
           key={vehicle.id}
           src={vehicle.img}
           alt={vehicle.name}
-          className="max-w-full object-contain drop-shadow-2xl"
+          className="max-w-full object-contain"
           style={{
-            maxHeight: "300px",
+            maxHeight: "320px",
             width: "auto",
             opacity: animating ? 0 : 1,
             transform: animating
-              ? `translateX(${dir === "right" ? "-60px" : "60px"}) scale(0.97)`
+              ? `translateX(${dir === "right" ? "-50px" : "50px"}) scale(0.96)`
               : "translateX(0) scale(1)",
             transition: "opacity 0.3s ease, transform 0.3s ease",
-            filter: "drop-shadow(0 40px 80px rgba(0,0,0,0.95)) brightness(1.05)",
+            mixBlendMode: "multiply" as const,
+            filter: "contrast(1.05)",
           }}
         />
       </div>
 
       {/* ── Info ── */}
       <div
-        className="text-center pb-10 px-6"
-        style={{
-          opacity: animating ? 0 : 1,
-          transition: "opacity 0.25s ease",
-        }}
+        className="text-center pb-8 px-6 md:px-16"
+        style={{ opacity: animating ? 0 : 1, transition: "opacity 0.25s ease" }}
       >
-        {/* Tier label */}
-        <p className="text-[10px] font-semibold tracking-[0.25em] uppercase text-[#c9a84c] mb-3">
+        {/* Tier */}
+        <p className="text-[10px] font-semibold tracking-[0.28em] uppercase text-[#c9a84c] mb-2">
           {vehicle.tier}
         </p>
 
@@ -130,29 +145,35 @@ export function FleetSelector({ onReserve }: { onReserve?: () => void }) {
         <h3
           className="text-white leading-none mb-1"
           style={{
-            fontSize: "clamp(28px, 4vw, 48px)",
+            fontSize: "clamp(22px, 3.5vw, 44px)",
             fontFamily: "Georgia, 'Times New Roman', serif",
             fontStyle: "italic",
             fontWeight: 400,
-            letterSpacing: "-0.01em",
           }}
         >
           {vehicle.name}{" "}
-          <span
-            style={{
-              fontSize: "clamp(13px, 1.5vw, 18px)",
-              fontStyle: "italic",
-              color: "rgba(255,255,255,0.4)",
-              fontFamily: "Georgia, serif",
-            }}
-          >
+          <span style={{ fontSize: "clamp(12px, 1.3vw, 16px)", color: "rgba(255,255,255,0.35)", fontFamily: "Georgia, serif", fontStyle: "italic" }}>
             {vehicle.orSimilar}
           </span>
         </h3>
 
-        {/* Specs */}
-        <div className="flex items-center justify-center gap-6 mt-4 mb-8">
-          {/* Passengers */}
+        {/* Description */}
+        <p className="text-white/40 text-sm leading-relaxed max-w-xl mx-auto mt-3 mb-5">
+          {vehicle.description}
+        </p>
+
+        {/* Features */}
+        <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-1.5 mb-6">
+          {vehicle.features.map((f, i) => (
+            <span key={i} className="flex items-center gap-1.5 text-[11px] text-white/40 tracking-wide">
+              <span className="text-[#c9a84c] text-xs">✓</span>
+              {f}
+            </span>
+          ))}
+        </div>
+
+        {/* Specs row */}
+        <div className="flex items-center justify-center gap-6 mb-7">
           <div className="flex items-center gap-2 text-white/50">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4">
               <circle cx="12" cy="7.5" r="3.2" />
@@ -162,10 +183,7 @@ export function FleetSelector({ onReserve }: { onReserve?: () => void }) {
               {vehicle.passengers} passengers
             </span>
           </div>
-
           <span className="text-white/15">|</span>
-
-          {/* Luggage */}
           <div className="flex items-center gap-2 text-white/50">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4">
               <rect x="5.5" y="7.5" width="13" height="12" rx="2" />
@@ -181,13 +199,10 @@ export function FleetSelector({ onReserve }: { onReserve?: () => void }) {
         <div className="flex items-center justify-center gap-6 flex-wrap">
           <button
             onClick={onReserve}
-            className="px-8 py-3 text-[11px] font-semibold tracking-[0.2em] uppercase transition-colors"
-            style={{
-              background: "#c9a84c",
-              color: "#0a0a0a",
-            }}
-            onMouseEnter={(e) => (e.currentTarget.style.background = "#d8b85b")}
-            onMouseLeave={(e) => (e.currentTarget.style.background = "#c9a84c")}
+            className="px-8 py-3 text-[11px] font-semibold tracking-[0.22em] uppercase transition-colors"
+            style={{ background: "#c9a84c", color: "#0a0a0a" }}
+            onMouseEnter={e => (e.currentTarget.style.background = "#d8b85b")}
+            onMouseLeave={e => (e.currentTarget.style.background = "#c9a84c")}
           >
             Reserve
           </button>
@@ -200,30 +215,20 @@ export function FleetSelector({ onReserve }: { onReserve?: () => void }) {
         </div>
       </div>
 
-      {/* ── Dots indicator ── */}
+      {/* ── Dot indicator ── */}
       <div className="flex items-center justify-center gap-2 pb-6">
-        {FLEET.map((_, i) => (
+        {FLEET.map((v, i) => (
           <button
             key={i}
-            onClick={() => {
-              if (!animating && i !== index) {
-                setDir(i > index ? "right" : "left");
-                setAnimating(true);
-                setTimeout(() => {
-                  setIndex(i);
-                  setDir(null);
-                  setAnimating(false);
-                }, 320);
-              }
-            }}
+            onClick={() => goTo(i)}
+            aria-label={v.name}
             className="rounded-full transition-all"
             style={{
-              width: i === index ? "20px" : "6px",
+              width: i === index ? "22px" : "6px",
               height: "6px",
-              background: i === index ? "#c9a84c" : "rgba(255,255,255,0.2)",
-              transition: "all 0.3s ease",
+              background: i === index ? "#c9a84c" : "rgba(255,255,255,0.18)",
+              transition: "all 0.35s ease",
             }}
-            aria-label={FLEET[i].name}
           />
         ))}
       </div>
