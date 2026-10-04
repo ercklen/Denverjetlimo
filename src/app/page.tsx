@@ -8,6 +8,7 @@ import ColoradoCoverageMap from "@/components/ui/colorado-coverage-map";
 import HowItWorks from "@/components/ui/how-it-works";
 import { ExpandRouteMap } from "@/components/ui/expand-map";
 import { RandomLetterSwap } from "@/components/ui/random-letter-swap";
+import BookingWidget from "@/components/ui/booking-widget";
 import AboutSection from "@/components/ui/about-section";
 
 /* ─── Fleet Data ─── */
@@ -203,134 +204,8 @@ export default function HomePage() {
   </div>
 </section>
 
-{/*  ─── TRIP PLANNER ───  */}
-<section className="planner-section" id="planner-section">
-  <div className="planner-card">
-    <div className="planner-header">
-      <span className="planner-eyebrow">Plan Your Journey</span>
-      <h2 className="planner-title">Private Airport Transfer</h2>
-    </div>
-    <div className="planner-form">
-      <div className="field-row">
-        <div className="form-field" id="pickupFieldWrapper">
-          <label>Pickup Location</label>
-          <div className="field-input" onClick={() => { setPickupOpen(!pickupOpen); setDestOpen(false); }} style={{ cursor: 'pointer' }}>
-            <span className="field-icon">{pickup.includes('Airport') ? '✈' : '📍'}</span>
-            <span className="field-value">{pickup}</span>
-            <span className="field-arrow">›</span>
-          </div>
-          <div className={`field-dropdown${pickupOpen ? " open" : ""}`}>
-            <div className={`dropdown-item${pickup === "Denver International Airport (DEN)" ? " active" : ""}`} onClick={() => { setPickup("Denver International Airport (DEN)"); setPickupOpen(false); }}>✈ Denver International Airport (DEN)</div>
-            <div className={`dropdown-item${pickup === "Custom Location" ? " active" : ""}`} onClick={() => { setPickup("Custom Location"); setPickupOpen(false); }}>📍 Custom Location</div>
-          </div>
-        </div>
-        <div className="field-swap">⇌</div>
-        <div className="form-field" id="destFieldWrapper">
-          <label>Destination</label>
-          <div className="field-input">
-            <span className="field-icon">📍</span>
-            <input 
-              type="text" 
-              placeholder="Where are you going?" 
-              autoComplete="off" 
-              value={destSearch}
-              onChange={(e) => {
-                setDestSearch(e.target.value);
-                setDestOpen(true);
-              }}
-              onFocus={() => { setDestOpen(true); setPickupOpen(false); }}
-            />
-          </div>
-          <div className={`field-dropdown${destOpen ? " open" : ""}`}>
-            {destItems
-              .filter(d => d.name.toLowerCase().includes(destSearch.toLowerCase()))
-              .map((d, i) => (
-                <div 
-                  key={i} 
-                  className="dropdown-item" 
-                  onClick={() => {
-                    setDestSearch(d.name);
-                    setDestOpen(false);
-                  }}
-                >
-                  {d.icon} {d.name} <span className="dest-dist">{d.time}</span>
-                </div>
-            ))}
-            {destItems.filter(d => d.name.toLowerCase().includes(destSearch.toLowerCase())).length === 0 && (
-              <div className="dropdown-item text-gray-400">No destinations found</div>
-            )}
-          </div>
-        </div>
-      </div>
-      <div className="field-row field-row-three">
-        <div className="form-field">
-          <label>Date</label>
-          <div className="field-input">
-            <span className="field-icon">📅</span>
-            <input type="date" id="dateInput" min="" />
-          </div>
-        </div>
-        <div className="form-field">
-          <label>Pickup Time</label>
-          <div className="field-input">
-            <span className="field-icon">🕐</span>
-            <input type="time" id="timeInput" />
-          </div>
-        </div>
-        <div className="form-field">
-          <label>Passengers</label>
-          <div className="field-input passenger-selector">
-            <span className="field-icon">👤</span>
-            <span id="passengerCount">{passengers === 1 ? "1 Passenger" : `${passengers} Passengers`}</span>
-            <div className="passenger-controls">
-              <button onClick={() => adjustPassengers(-1)}>−</button>
-              <button onClick={() => adjustPassengers(1)}>+</button>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="vehicle-selector-row">
-        <label className="vehicle-label">Select Vehicle Class</label>
-        <div className="vehicle-options">
-          <button
-            className={`vehicle-opt${activeVehicle === "suv" ? " active" : ""}`}
-            onClick={() => setActiveVehicle("suv")}
-            id="vopt-suv"
-          >
-            <img className="vopt-img" src="vopt_suv.png" alt="Luxury SUV" />
-            <span className="vopt-name">Luxury SUV</span>
-            <span className="vopt-cap">Up to 6</span>
-          </button>
-          <button
-            className={`vehicle-opt${activeVehicle === "sedan" ? " active" : ""}`}
-            onClick={() => setActiveVehicle("sedan")}
-            id="vopt-sedan"
-          >
-            <img className="vopt-img" src="vopt_sedan.png" alt="Executive Sedan" />
-            <span className="vopt-name">Executive Sedan</span>
-            <span className="vopt-cap">Up to 3</span>
-          </button>
-          <button
-            className={`vehicle-opt${activeVehicle === "sprinter" ? " active" : ""}`}
-            onClick={() => setActiveVehicle("sprinter")}
-            id="vopt-sprinter"
-          >
-            <img className="vopt-img" src="vopt_sprinter.png" alt="Sprinter Van" />
-            <span className="vopt-name">Sprinter Van</span>
-            <span className="vopt-cap">Up to 14</span>
-          </button>
-        </div>
-      </div>
-      <div className="planner-actions">
-        <button className="btn-gold planner-btn" onClick={openComingSoon}>
-          Continue
-          <span className="btn-arrow">→</span>
-        </button>
-        <p className="planner-note">No credit card required to preview</p>
-      </div>
-    </div>
-  </div>
-</section>
+{/*  ─── BOOKING WIDGET ───  */}
+<BookingWidget />
 
 {/*  ─── STATS BAR ───  */}
 <section className="stats-bar">
