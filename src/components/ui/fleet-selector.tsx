@@ -136,7 +136,7 @@ export function FleetSelector({ onReserve }: { onReserve?: () => void }) {
         style={{ opacity: animating ? 0 : 1, transition: "opacity 0.25s ease" }}
       >
         {/* Tier */}
-        <p className="text-[10px] font-semibold tracking-[0.28em] uppercase text-[#c9a84c] mb-2">
+        <p className="text-[10px] font-semibold tracking-[0.28em] uppercase text-white/60 mb-2">
           {vehicle.tier}
         </p>
 
@@ -165,7 +165,7 @@ export function FleetSelector({ onReserve }: { onReserve?: () => void }) {
         <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-1.5 mb-6">
           {vehicle.features.map((f, i) => (
             <span key={i} className="flex items-center gap-1.5 text-[11px] text-white/40 tracking-wide">
-              <span className="text-[#c9a84c] text-xs">✓</span>
+              <span className="text-white text-xs">✓</span>
               {f}
             </span>
           ))}
@@ -199,9 +199,9 @@ export function FleetSelector({ onReserve }: { onReserve?: () => void }) {
           <button
             onClick={onReserve}
             className="px-8 py-3 text-[11px] font-semibold tracking-[0.22em] uppercase transition-colors"
-            style={{ background: "#c9a84c", color: "#0a0a0a" }}
-            onMouseEnter={e => (e.currentTarget.style.background = "#d8b85b")}
-            onMouseLeave={e => (e.currentTarget.style.background = "#c9a84c")}
+            style={{ background: "#ffffff", color: "#0a0a0a" }}
+            onMouseEnter={e => (e.currentTarget.style.background = "#e5e5e5")}
+            onMouseLeave={e => (e.currentTarget.style.background = "#ffffff")}
           >
             Reserve
           </button>
@@ -225,7 +225,7 @@ export function FleetSelector({ onReserve }: { onReserve?: () => void }) {
             style={{
               width: i === index ? "22px" : "6px",
               height: "6px",
-              background: i === index ? "#c9a84c" : "rgba(255,255,255,0.18)",
+              background: i === index ? "#ffffff" : "rgba(255,255,255,0.18)",
               transition: "all 0.35s ease",
             }}
           />

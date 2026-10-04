@@ -405,7 +405,7 @@ export default function HomePage() {
   </div>
   <div className="container">
     <div className="corporate-content reveal">
-      <p className="section-eyebrow" style={{"color": "#c9a84c"}}>Corporate Programs</p>
+      <p className="section-eyebrow" style={{"color": "rgba(255,255,255,0.6)"}}>Corporate Programs</p>
       <h2 className="corporate-heading">Built for<br /><em>Business.</em></h2>
       <p className="corporate-body">Executive transportation for meetings, airport transfers, corporate events and business travel across Denver and Colorado. Reliable, discreet and always on time.</p>
       <div className="corporate-features">
