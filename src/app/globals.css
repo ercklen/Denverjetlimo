@@ -733,7 +733,7 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 .dropdown-item:last-child { border-bottom: none; }
 
 .dropdown-item:hover, .dropdown-item.active {
-  background: rgba(201,168,76,0.1);
+  background: rgba(255,255,255,0.05);
   color: var(--gold-light);
 }
 
@@ -782,7 +782,7 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 }
 
 .passenger-controls button:hover {
-  background: rgba(201,168,76,0.1);
+  background: rgba(255,255,255,0.05);
   border-color: var(--gold);
 }
 
@@ -881,8 +881,8 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 ═══════════════════════════════════════════════ */
 .stats-bar {
   background: var(--charcoal);
-  border-top: 1px solid rgba(201,168,76,0.1);
-  border-bottom: 1px solid rgba(201,168,76,0.1);
+  border-top: 1px solid rgba(255,255,255,0.05);
+  border-bottom: 1px solid rgba(255,255,255,0.05);
   padding: 48px 40px;
 }
 
@@ -1517,7 +1517,7 @@ input[type="time"]::-webkit-calendar-picker-indicator {
   min-width: 100%;
   padding: 60px 80px;
   background: var(--charcoal);
-  border: 1px solid rgba(201,168,76,0.1);
+  border: 1px solid rgba(255,255,255,0.05);
   border-radius: var(--radius-xl);
   display: flex;
   flex-direction: column;
@@ -1806,7 +1806,7 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 ═══════════════════════════════════════════════ */
 .footer {
   background: var(--near-black);
-  border-top: 1px solid rgba(201,168,76,0.1);
+  border-top: 1px solid rgba(255,255,255,0.05);
 }
 
 .footer-top {

@@ -9,7 +9,7 @@ export function BookingWidget() {
   const [mode, setMode] = useState<TripMode>("transfer");
 
   return (
-    <div className="w-full max-w-6xl mx-auto -mt-16 relative z-20">
+    <div className="w-full max-w-6xl mx-auto -mt-16 mb-20 relative z-20 px-6">
       <div className="bg-[#161616] border border-white/5 shadow-2xl rounded-sm p-8">
         
         {/* Top Header Row */}
