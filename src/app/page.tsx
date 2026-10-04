@@ -283,12 +283,14 @@ export default function HomePage() {
 </section>
 
 {/*  ─── FLEET SECTION ───  */}
-<section className="fleet-section section-pad" id="fleet-section">
+<section className="section-pad bg-[#0a0a0a] border-t border-white/5" id="fleet-section">
   <div className="container">
-    <div className="section-header reveal">
-      <p className="section-eyebrow">Our Fleet</p>
-      <h2 className="section-heading">Travel in Comfort.<br /><em>Arrive in Style.</em></h2>
-      <p className="section-sub">Choose the vehicle that matches your journey.</p>
+    <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-16 reveal">
+      <div>
+        <p className="text-[11px] font-semibold tracking-[0.2em] uppercase text-white/50 mb-3">The Fleet</p>
+        <h2 className="text-4xl md:text-5xl font-light text-white leading-tight">Ready for every journey.</h2>
+      </div>
+      <p className="text-white/50 text-sm max-w-xs mt-4 md:mt-0 leading-relaxed">Every booking guarantees a premium vehicle, meticulously maintained for executive demands.</p>
     </div>
     <div className="fleet-grid">
       {/*  SUV Card  */}
@@ -353,6 +355,9 @@ export default function HomePage() {
   </div>
 </section>
 
+  </div>
+</section>
+
 {/*  ─── ABOUT SECTION ───  */}
 <AboutSection />
 
@@ -409,14 +414,16 @@ export default function HomePage() {
 </section>
 
 {/*  ─── MAP SECTION ───  */}
-<section className="map-section section-pad" id="map-section">
+<section className="section-pad bg-[#080808] border-t border-white/5" id="map-section">
   <div className="container">
-    <div className="section-header reveal">
-      <p className="section-eyebrow">Service Routes</p>
-      <h2 className="section-heading">Denver &amp; Colorado<br /><em>Coverage Map.</em></h2>
-      <p className="section-sub">Interactive network connecting Denver International Airport (DEN) to mountain ski resorts, universities, and cities.</p>
+    <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-12 reveal">
+      <div>
+        <p className="text-[11px] font-semibold tracking-[0.2em] uppercase text-white/50 mb-3">Colorado Coverage</p>
+        <h2 className="text-4xl md:text-5xl font-light text-white leading-tight">From Denver,<br /><span className="text-white/40">to all of Colorado.</span></h2>
+      </div>
+      <p className="text-white/50 text-sm max-w-xs mt-4 md:mt-0 leading-relaxed">Connecting Denver International Airport to Aspen, Vail, Breckenridge, Boulder and beyond.</p>
     </div>
-    <div className="w-full mt-8">
+    <div className="w-full">
       <ColoradoCoverageMap />
     </div>
   </div>
@@ -531,74 +538,90 @@ export default function HomePage() {
 </section>
 
 {/*  ─── FOOTER ───  */}
-<footer className="footer">
-  <div className="footer-top">
-    <div className="footer-brand">
-      <div className="footer-logo">
-        <span className="logo-icon">✦</span>
-        <div className="logo-text">
-          <span className="logo-main">DENVER JET LIMO</span>
-          <span className="logo-sub">TRANSPORTATION</span>
-        </div>
+<footer className="border-t border-white/10 bg-[#080808]">
+  {/* CTA band */}
+  <div className="border-b border-white/10 py-16">
+    <div className="container flex flex-col md:flex-row md:items-center md:justify-between gap-8">
+      <div>
+        <p className="text-[11px] font-semibold tracking-[0.2em] uppercase text-white/40 mb-3">Denver Jet Limo</p>
+        <h2 className="text-3xl md:text-4xl font-light text-white leading-snug">Ready to ride?<br /><span className="text-white/40">We're always on call.</span></h2>
       </div>
-      <p className="footer-tagline">Luxury transportation throughout<br />Denver and Colorado.</p>
-      <div className="social-links">
-        <a href="#" className="social-link" aria-label="Instagram">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+      <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
+        <a href="tel:+13033224499" className="inline-flex items-center gap-3 bg-white text-black text-xs font-semibold tracking-widest uppercase px-8 py-4 hover:bg-white/90 transition-colors">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13.5a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2.69h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          +1 (303) 322-4499
         </a>
-        <a href="#" className="social-link" aria-label="Facebook">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
-        </a>
-        <a href="#" className="social-link" aria-label="LinkedIn">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-        </a>
-        <a href="#" className="social-link" aria-label="Twitter/X">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg>
-        </a>
-      </div>
-    </div>
-    <div className="footer-nav-group">
-      <h4>Services</h4>
-      <ul>
-        <li><a href="#airport-section">Airport Transportation</a></li>
-        <li><a href="#fleet-section">Fleet</a></li>
-        <li><a href="#destinations-section">Destinations</a></li>
-        <li><a href="#corporate-section">Corporate Transportation</a></li>
-        <li><a href="#occasions-section">Special Events</a></li>
-      </ul>
-    </div>
-    <div className="footer-nav-group">
-      <h4>Company</h4>
-      <ul>
-        <li><a href="#about-section">About Us</a></li>
-        <li><a href="#" onClick={(e) => { e.preventDefault(); scrollToPlanner(); }}>Reservations</a></li>
-        <li><a href="/contact">Contact</a></li>
-        <li><a href="/privacy">Privacy Policy</a></li>
-        <li><a href="/terms">Terms of Service</a></li>
-      </ul>
-    </div>
-    <div className="footer-contact">
-      <h4>Contact</h4>
-      <div className="contact-item">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13.5a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2.69h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-        <span>+1 (303) 322-4499</span>
-      </div>
-      <div className="contact-item">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-        <a href="mailto:Invescolimousine@msn.com">Invescolimousine@msn.com</a>
-      </div>
-      <div className="contact-item">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-        <span>Denver, Colorado</span>
+        <a href="mailto:Invescolimousine@msn.com" className="text-xs text-white/50 hover:text-white transition-colors tracking-wide">Invescolimousine@msn.com</a>
       </div>
     </div>
   </div>
-  <div className="footer-bottom">
-    <p>© 2026 Denver Jet Limo. All Rights Reserved.</p>
-    <div className="footer-bottom-links">
-      <a href="/privacy">Privacy Policy</a>
-      <span>|</span>
-      <a href="/terms">Terms of Service</a>
+
+  {/* Main footer grid */}
+  <div className="container py-16">
+    <div className="grid grid-cols-2 md:grid-cols-4 gap-10">
+      {/* Brand */}
+      <div className="col-span-2 md:col-span-1">
+        <div className="flex items-center gap-2 mb-4">
+          <span className="text-white font-semibold tracking-[0.3em] text-xs uppercase">Denver Jet Limo</span>
+        </div>
+        <p className="text-white/40 text-xs leading-relaxed">Premium chauffeur &amp; transportation service throughout Denver and Colorado.</p>
+        <div className="flex gap-3 mt-6">
+          <a href="#" aria-label="Instagram" className="text-white/30 hover:text-white transition-colors">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+          <a href="#" aria-label="Facebook" className="text-white/30 hover:text-white transition-colors">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+          <a href="#" aria-label="LinkedIn" className="text-white/30 hover:text-white transition-colors">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+        </div>
+      </div>
+
+      {/* Services */}
+      <div>
+        <p className="text-[10px] font-semibold tracking-[0.2em] uppercase text-white/30 mb-5">Services</p>
+        <ul className="space-y-3">
+          <li><a href="#airport-section" className="text-xs text-white/50 hover:text-white transition-colors">Airport Transportation</a></li>
+          <li><a href="#fleet-section" className="text-xs text-white/50 hover:text-white transition-colors">Our Fleet</a></li>
+          <li><a href="#destinations-section" className="text-xs text-white/50 hover:text-white transition-colors">Destinations</a></li>
+          <li><a href="#corporate-section" className="text-xs text-white/50 hover:text-white transition-colors">Corporate Travel</a></li>
+          <li><a href="#occasions-section" className="text-xs text-white/50 hover:text-white transition-colors">Special Events</a></li>
+        </ul>
+      </div>
+
+      {/* Company */}
+      <div>
+        <p className="text-[10px] font-semibold tracking-[0.2em] uppercase text-white/30 mb-5">Company</p>
+        <ul className="space-y-3">
+          <li><a href="#about-section" className="text-xs text-white/50 hover:text-white transition-colors">About Us</a></li>
+          <li><a href="#" onClick={(e) => { e.preventDefault(); scrollToPlanner(); }} className="text-xs text-white/50 hover:text-white transition-colors">Reservations</a></li>
+          <li><a href="/privacy" className="text-xs text-white/50 hover:text-white transition-colors">Privacy Policy</a></li>
+          <li><a href="/terms" className="text-xs text-white/50 hover:text-white transition-colors">Terms of Service</a></li>
+        </ul>
+      </div>
+
+      {/* Contact */}
+      <div>
+        <p className="text-[10px] font-semibold tracking-[0.2em] uppercase text-white/30 mb-5">Contact</p>
+        <ul className="space-y-3">
+          <li><a href="tel:+13033224499" className="text-xs text-white/50 hover:text-white transition-colors">+1 (303) 322-4499</a></li>
+          <li><a href="mailto:Invescolimousine@msn.com" className="text-xs text-white/50 hover:text-white transition-colors">Invescolimousine@msn.com</a></li>
+          <li><span className="text-xs text-white/30">Denver, Colorado</span></li>
+          <li><span className="text-xs text-white/30">Available 24/7</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  {/* Bottom bar */}
+  <div className="border-t border-white/5 py-6">
+    <div className="container flex flex-col sm:flex-row items-center justify-between gap-3">
+      <p className="text-[11px] text-white/25">© 2026 Denver Jet Limo. All rights reserved.</p>
+      <div className="flex gap-6">
+        <a href="/privacy" className="text-[11px] text-white/25 hover:text-white/60 transition-colors">Privacy</a>
+        <a href="/terms" className="text-[11px] text-white/25 hover:text-white/60 transition-colors">Terms</a>
+      </div>
     </div>
   </div>
 </footer>
