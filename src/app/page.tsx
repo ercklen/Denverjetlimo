@@ -604,7 +604,7 @@ export default function HomePage() {
 
     {/* Phone CTA Block */}
     <a
-      href="tel:+17205680206"
+      href="tel:+13033224499"
       onClick={() => {
         if (typeof window !== "undefined" && (window as any).gtag) {
           (window as any).gtag('event', 'conversion', {'send_to': 'AW-18485059764/7eS2CIDmoY0dELTBru5E'});
@@ -747,7 +747,7 @@ export default function HomePage() {
 
 {/*  Floating Call Icon  */}
 <a 
-  href="tel:+17205680206" 
+  href="tel:+13033224499" 
   className="floating-call-btn" 
   aria-label="Call Us"
   onClick={() => {
