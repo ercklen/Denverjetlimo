@@ -3,18 +3,19 @@
 import React, { useState } from "react";
 import Script from "next/script";
 import CarouselStacked from "@/components/ui/carousel-07";
-import TestimonialsStack from "@/components/ui/testimonials-stack";
+import TestimonialMarqueeDemo from "@/components/ui/marquee-01";
 import ColoradoCoverageMap from "@/components/ui/colorado-coverage-map";
 import HowItWorks from "@/components/ui/how-it-works";
 import { ExpandRouteMap } from "@/components/ui/expand-map";
 import { RandomLetterSwap } from "@/components/ui/random-letter-swap";
+import AboutSection from "@/components/ui/about-section";
 
 /* ─── Fleet Data ─── */
 const fleetData = {
   suv: {
     type: "Luxury SUV",
     name: "Cadillac Escalade · GMC Yukon Denali · Chevrolet Suburban",
-    img: "fleet_escalade_suv_1786503952518.jpg",
+    img: "fleet_suv_black.png",
     desc: "Spacious luxury SUVs engineered for the highest standards of airport and executive transportation. Premium leather seating, climate control, and professional presentation.",
     specs: [
       { icon: "👤", label: "Up to 6 Passengers" },
@@ -26,7 +27,7 @@ const fleetData = {
   sedan: {
     type: "Executive Sedan",
     name: "Mercedes-Benz S-Class · BMW 7 Series · Cadillac CT6",
-    img: "fleet_executive_sedan_1786503961868.jpg",
+    img: "fleet_sedan_black.png",
     desc: "The pinnacle of refined executive transportation. Discreet, elegant and engineered for those who demand the highest level of comfort and privacy for every journey.",
     specs: [
       { icon: "👤", label: "Up to 3 Passengers" },
@@ -36,10 +37,10 @@ const fleetData = {
     features: ["Heated Massaging Seats","Ambient Lighting","Privacy Glass","Noise Isolation","Wi-Fi Hotspot","Premium Audio","Champagne Welcome","Door-to-Door Service"],
   },
   sprinter: {
-    type: "Sprinter Van",
+    type: "Executive Jet Sprinter",
     name: "Mercedes-Benz Sprinter Executive",
-    img: "vopt_sprinter.jpg",
-    desc: "Premium transportation for groups, corporate roadshows, and extended families. Spacious, comfortable, and luxurious for all your travel needs throughout Denver and Colorado.",
+    img: "fleet_jet_sprinter.png",
+    desc: "A private jet experience on wheels. Premium transportation for executive teams and groups, featuring reclining captain chairs, ambient mood lighting, and full connectivity.",
     specs: [
       { icon: "👥", label: "Up to 14 Passengers" },
       { icon: "🧳", label: "Up to 14 Bags" },
@@ -183,31 +184,22 @@ export default function HomePage() {
 </nav>
 
 {/*  ─── HERO ───  */}
-<section className="hero" id="home">
-  <div className="hero-bg">
-    <img src="hero_den_airport_1786503942729.jpg" alt="Luxury black SUV at Denver International Airport" className="hero-img" />
-    <div className="hero-overlay"></div>
+<section className="relative h-screen min-h-[800px] flex items-center justify-center overflow-hidden" id="home">
+  <div className="absolute inset-0">
+    <img src="hero_jet_limo.png" alt="Denver Jet Limo Service" className="w-full h-full object-cover object-center" />
+    <div className="absolute inset-0 bg-black/50"></div>
   </div>
-  <div className="hero-content reveal">
-    <h1 className="hero-headline">
-      Luxury Transportation,<br />From Denver Airport<br /><em>to Wherever You&apos;re Going.</em>
+  <div className="relative z-10 text-center px-6 max-w-5xl mx-auto flex flex-col items-center justify-center mt-20">
+    <p className="text-xs font-semibold tracking-[0.2em] uppercase text-white/70 mb-6 reveal">
+      Colorado's Executive Car Service
+    </p>
+    <h1 className="text-5xl md:text-7xl font-light text-white mb-8 leading-tight tracking-tight reveal" style={{ fontFamily: "var(--font-serif)" }}>
+      Premier Private Chauffeur<br />
+      <span className="text-white/60">&amp; Transportation Service</span>
     </h1>
-    <p className="hero-sub">Private airport transfers, executive transportation, and premium chauffeur service throughout Denver and Colorado.</p>
-    <div className="hero-ctas">
-      <button className="btn-gold hero-btn-primary" onClick={scrollToPlanner}>Plan Your Ride</button>
-      <a href="#fleet-section" className="btn-ghost hero-btn-secondary">Explore Our Fleet</a>
-    </div>
-    <div className="trust-bar">
-      <span>Professional Chauffeurs</span>
-      <span className="trust-dot">•</span>
-      <span>Premium Vehicles</span>
-      <span className="trust-dot">•</span>
-      <span>Airport Transfers</span>
-    </div>
-  </div>
-  <div className="hero-scroll-indicator">
-    <span>Scroll</span>
-    <div className="scroll-line"></div>
+    <p className="text-lg md:text-xl text-[#a3a3a3] max-w-2xl mx-auto font-light leading-relaxed mb-12 reveal">
+      Where private transfers &amp; transportation begins. From Denver International Airport to the entire state of Colorado.
+    </p>
   </div>
 </section>
 
@@ -427,7 +419,7 @@ export default function HomePage() {
       {/*  SUV Card  */}
       <div className="fleet-card reveal">
         <div className="fleet-img-wrap">
-          <img src="fleet_escalade_suv_1786503952518.jpg" alt="Cadillac Escalade Luxury SUV" className="fleet-img" />
+          <img src="fleet_suv_black.png" alt="Cadillac Escalade Luxury SUV" className="fleet-img" />
           <div className="fleet-img-overlay"></div>
           <div className="fleet-badge">Most Popular</div>
         </div>
@@ -447,7 +439,7 @@ export default function HomePage() {
       {/*  Sedan Card  */}
       <div className="fleet-card reveal">
         <div className="fleet-img-wrap">
-          <img src="fleet_executive_sedan_1786503961868.jpg" alt="Mercedes-Benz S-Class Executive Sedan" className="fleet-img" />
+          <img src="fleet_sedan_black.png" alt="Executive Sedan" className="fleet-img" />
           <div className="fleet-img-overlay"></div>
         </div>
         <div className="fleet-info">
@@ -463,21 +455,21 @@ export default function HomePage() {
           <button className="fleet-cta" onClick={() => openFleet("sedan")}>View Sedan <span>→</span></button>
         </div>
       </div>
-      {/*  Sprinter Van Card  */}
+      {/*  Jet Sprinter Van Card  */}
       <div className="fleet-card reveal">
         <div className="fleet-img-wrap">
-          <img src="vopt_sprinter.jpg" alt="Sprinter Van" className="fleet-img" />
+          <img src="fleet_jet_sprinter.png" alt="Executive Jet Sprinter" className="fleet-img" />
           <div className="fleet-img-overlay"></div>
         </div>
         <div className="fleet-info">
           <div className="fleet-info-top">
-            <h3 className="fleet-name">Sprinter Van</h3>
+            <h3 className="fleet-name">Executive Jet Sprinter</h3>
             <p className="fleet-models">Mercedes-Benz Sprinter Executive</p>
           </div>
-          <p className="fleet-desc">Premium transportation for groups, corporate roadshows and extended families. Spacious, comfortable, and luxurious.</p>
+          <p className="fleet-desc">A private jet experience on wheels. Premium transportation for executive teams, featuring reclining captain chairs and ambient lighting.</p>
           <div className="fleet-specs">
-            <span className="spec"><span className="spec-icon">👥</span> Up to 14 passengers</span>
-            <span className="spec"><span className="spec-icon">🥂</span> Amenities</span>
+            <span className="spec"><span className="spec-icon">👥</span> Up to 10 passengers</span>
+            <span className="spec"><span className="spec-icon">🥂</span> VIP Amenities</span>
           </div>
           <button className="fleet-cta" onClick={() => openFleet("sprinter")}>View Sprinter <span>→</span></button>
         </div>
@@ -486,52 +478,8 @@ export default function HomePage() {
   </div>
 </section>
 
-{/*  ─── WHY CHOOSE US ───  */}
-<section className="why-section section-pad" id="about-section">
-  <div className="container">
-    <div className="section-header reveal">
-      <p className="section-eyebrow">Why Denver Jet Limo</p>
-      <h2 className="section-heading">More Than<br /><em>a Ride.</em></h2>
-    </div>
-    <div className="why-grid">
-      <div className="why-card reveal">
-        <div className="why-icon">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-        </div>
-        <h3>Professional Chauffeurs</h3>
-        <p>Experienced, courteous and professionally presented drivers who treat your time as a priority.</p>
-      </div>
-      <div className="why-card reveal">
-        <div className="why-icon">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-        </div>
-        <h3>Premium Fleet</h3>
-        <p>Luxury vehicles maintained to the highest standards. Immaculate interiors and flawless exteriors guaranteed.</p>
-      </div>
-      <div className="why-card reveal">
-        <div className="why-icon">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M17.8 19.2L16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg>
-        </div>
-        <h3>Airport Specialists</h3>
-        <p>Reliable transportation designed around your flight. Real-time tracking adapts to delays and early arrivals.</p>
-      </div>
-      <div className="why-card reveal">
-        <div className="why-icon">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-        </div>
-        <h3>Privacy &amp; Comfort</h3>
-        <p>A quiet, comfortable environment from pickup to destination. Your privacy is always respected.</p>
-      </div>
-      <div className="why-card reveal">
-        <div className="why-icon">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg>
-        </div>
-        <h3>Available When You Need Us</h3>
-        <p>Transportation designed for business, travel and special occasions. Available around the clock, every day.</p>
-      </div>
-    </div>
-  </div>
-</section>
+{/*  ─── ABOUT SECTION ───  */}
+<AboutSection />
 
 {/*  ─── DESTINATIONS ───  */}
 <section className="destinations-section section-pad" id="destinations-section">
@@ -608,7 +556,7 @@ export default function HomePage() {
       <p className="section-sub">Verified 5-star experiences from executive travelers, mountain visitors, and event organizers.</p>
     </div>
     <div className="w-full">
-      <TestimonialsStack />
+      <TestimonialMarqueeDemo />
     </div>
   </div>
 </section>
@@ -616,7 +564,7 @@ export default function HomePage() {
 {/*  ─── CORPORATE ───  */}
 <section className="corporate-section section-pad" id="corporate-section">
   <div className="corporate-bg">
-    <img src="fleet_executive_sedan_1786503961868.jpg" alt="Executive corporate transportation" className="corp-bg-img" />
+    <img src="fleet_sedan_black.png" alt="Executive corporate transportation" className="corp-bg-img" />
     <div className="corp-overlay"></div>
   </div>
   <div className="container">
@@ -758,11 +706,11 @@ export default function HomePage() {
       <h4>Contact</h4>
       <div className="contact-item">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13.5a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2.69h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-        <span>+1 (720) 568-0206</span>
+        <span>+1 (303) 322-4499</span>
       </div>
       <div className="contact-item">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-        <a href="mailto:coloradodenverlimousine@gmail.com">coloradodenverlimousine@gmail.com</a>
+        <a href="mailto:Invescolimousine@msn.com">Invescolimousine@msn.com</a>
       </div>
       <div className="contact-item">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
@@ -846,7 +794,7 @@ export default function HomePage() {
           Call to Reserve — Available 24/7
         </p>
         <p style={{ fontSize: '1.35rem', fontWeight: 700, color: '#fff', fontFamily: 'var(--font-serif, serif)', letterSpacing: '0.05em' }}>
-          +1 (720) 568-0206
+          +1 (303) 322-4499
         </p>
         <p style={{ fontSize: '0.72rem', color: 'var(--text-secondary)', marginTop: '2px' }}>
           Speak with a reservation specialist
