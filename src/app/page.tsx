@@ -291,7 +291,7 @@ export default function HomePage() {
       <div>
         <p className="text-[11px] font-semibold tracking-[0.2em] uppercase text-white/50 mb-3">The Fleet</p>
         <h2
-          className="text-white leading-none"
+          className="text-white leading-tight pb-2"
           style={{
             fontSize: "clamp(32px, 5vw, 56px)",
             fontFamily: "Georgia, 'Times New Roman', serif",

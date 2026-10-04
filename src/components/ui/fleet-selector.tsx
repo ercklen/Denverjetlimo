@@ -125,8 +125,7 @@ export function FleetSelector({ onReserve }: { onReserve?: () => void }) {
               ? `translateX(${dir === "right" ? "-50px" : "50px"}) scale(0.96)`
               : "translateX(0) scale(1)",
             transition: "opacity 0.3s ease, transform 0.3s ease",
-            mixBlendMode: "multiply" as const,
-            filter: "contrast(1.05)",
+            filter: "drop-shadow(0 40px 60px rgba(0,0,0,0.8)) brightness(1.05)",
           }}
         />
       </div>
