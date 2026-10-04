@@ -64,7 +64,7 @@ export function FleetSelector({ onReserve }: { onReserve?: () => void }) {
         minHeight: "580px",
       }}
     >
-      {/* ── Vehicle image ── */}}
+      {/* ── Left nav ── */}
       <button
         onClick={() => navigate("left")}
         className="absolute left-4 md:left-10 top-1/2 -translate-y-1/2 flex items-center gap-2 group z-10"
