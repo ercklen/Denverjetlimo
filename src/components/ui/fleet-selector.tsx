@@ -82,7 +82,7 @@ export function FleetSelector({ onReserve }: { onReserve?: () => void }) {
     <div
       className="relative w-full overflow-hidden select-none"
       style={{
-        background: "radial-gradient(ellipse 75% 65% at 50% 45%, rgba(90,65,5,0.4) 0%, #080808 65%)",
+        background: "radial-gradient(ellipse 75% 65% at 50% 45%, rgba(255,255,255,0.06) 0%, #080808 65%)",
         minHeight: "620px",
       }}
     >
