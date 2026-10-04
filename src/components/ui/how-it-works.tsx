@@ -29,17 +29,17 @@ const StepCard: React.FC<StepCardProps> = ({
 }) => (
   <div
     className={cn(
-      "relative rounded-2xl border border-[#c9a84c]/20 bg-[#141414] p-7 text-[#f0ebe0] transition-all duration-300 ease-in-out shadow-xl flex flex-col justify-between group",
-      "hover:scale-[1.03] hover:shadow-[0_10px_30px_rgba(201,168,76,0.15)] hover:border-[#c9a84c]/50 hover:bg-[#181818]"
+      "relative rounded-2xl border border-[#ffffff]/20 bg-[#141414] p-7 text-[#f0ebe0] transition-all duration-300 ease-in-out shadow-xl flex flex-col justify-between group",
+      "hover:scale-[1.03] hover:shadow-[0_10px_30px_rgba(255,255,255,0.15)] hover:border-[#ffffff]/50 hover:bg-[#181818]"
     )}
   >
     <div>
       {/* Top row with icon & step badge */}
       <div className="mb-6 flex items-center justify-between">
-        <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#c9a84c]/10 text-[#c9a84c] border border-[#c9a84c]/30 group-hover:bg-[#c9a84c] group-hover:text-black transition-colors duration-300">
+        <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#ffffff]/10 text-[#ffffff] border border-[#ffffff]/30 group-hover:bg-[#ffffff] group-hover:text-black transition-colors duration-300">
           {icon}
         </div>
-        <span className="font-serif text-2xl font-bold text-[#c9a84c]/40 group-hover:text-[#c9a84c] transition-colors duration-300">
+        <span className="font-serif text-2xl font-bold text-[#ffffff]/40 group-hover:text-[#ffffff] transition-colors duration-300">
           {stepNumber}
         </span>
       </div>
@@ -53,8 +53,8 @@ const StepCard: React.FC<StepCardProps> = ({
     <ul className="space-y-2.5 border-t border-white/10 pt-5">
       {benefits.map((benefit, index) => (
         <li key={index} className="flex items-center gap-3 text-xs text-stone-300">
-          <div className="flex h-4 w-4 flex-shrink-0 items-center justify-center rounded-full bg-[#c9a84c]/20">
-            <div className="h-1.5 w-1.5 rounded-full bg-[#c9a84c]"></div>
+          <div className="flex h-4 w-4 flex-shrink-0 items-center justify-center rounded-full bg-[#ffffff]/20">
+            <div className="h-1.5 w-1.5 rounded-full bg-[#ffffff]"></div>
           </div>
           <span>{benefit}</span>
         </li>
@@ -120,13 +120,13 @@ export const HowItWorks: React.FC<HowItWorksProps> = ({
         <div className="relative mx-auto mb-10 w-full max-w-4xl hidden sm:block">
           <div
             aria-hidden="true"
-            className="absolute left-[16.6667%] top-1/2 h-0.5 w-[66.6667%] -translate-y-1/2 bg-[#c9a84c]/20"
+            className="absolute left-[16.6667%] top-1/2 h-0.5 w-[66.6667%] -translate-y-1/2 bg-[#ffffff]/20"
           ></div>
           <div className="relative grid grid-cols-3">
             {stepsData.map((step, index) => (
               <div
                 key={index}
-                className="flex h-9 w-9 items-center justify-center justify-self-center rounded-full bg-[#141414] font-semibold text-[#c9a84c] border border-[#c9a84c]/40 ring-4 ring-[#080808]"
+                className="flex h-9 w-9 items-center justify-center justify-self-center rounded-full bg-[#141414] font-semibold text-[#ffffff] border border-[#ffffff]/40 ring-4 ring-[#080808]"
               >
                 {index + 1}
               </div>
