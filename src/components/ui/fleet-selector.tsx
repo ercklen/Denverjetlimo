@@ -10,7 +10,7 @@ const FLEET = [
     orSimilar: "or similar",
     passengers: 3,
     luggage: 3,
-    img: "/fleet_sedan_cutout.png",
+    img: "/fleet_sedan_black.png",
   },
   {
     id: "suv",
@@ -19,7 +19,7 @@ const FLEET = [
     orSimilar: "or similar",
     passengers: 6,
     luggage: 6,
-    img: "/fleet_escalade_cutout.png",
+    img: "/fleet_suv_black.png",
   },
   {
     id: "sprinter",
@@ -28,7 +28,7 @@ const FLEET = [
     orSimilar: "or similar",
     passengers: 10,
     luggage: 10,
-    img: "/fleet_sprinter_cutout.png",
+    img: "/fleet_jet_sprinter.png",
   },
 ];
 
@@ -101,14 +101,14 @@ export function FleetSelector({ onReserve }: { onReserve?: () => void }) {
           alt={vehicle.name}
           className="max-w-full object-contain drop-shadow-2xl"
           style={{
-            maxHeight: "280px",
+            maxHeight: "300px",
+            width: "auto",
             opacity: animating ? 0 : 1,
             transform: animating
               ? `translateX(${dir === "right" ? "-60px" : "60px"}) scale(0.97)`
               : "translateX(0) scale(1)",
             transition: "opacity 0.3s ease, transform 0.3s ease",
-            filter: "drop-shadow(0 30px 60px rgba(0,0,0,0.9))",
-            mixBlendMode: "multiply" as const,
+            filter: "drop-shadow(0 40px 80px rgba(0,0,0,0.95)) brightness(1.05)",
           }}
         />
       </div>
