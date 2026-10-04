@@ -122,8 +122,8 @@ export function ColoradoCoverageMap() {
           {allPins.map((dest) => {
             const isActive = active?.id === dest.id;
             const isHov = hovered === dest.id;
-            const isHub = "isHub" in dest && dest.isHub;
-            const highlight = isActive || isHov;
+            const isHub = "isHub" in dest && Boolean(dest.isHub);
+            const highlight = Boolean(isActive || isHov);
 
             return (
               <g
