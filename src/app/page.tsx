@@ -9,6 +9,7 @@ import HowItWorks from "@/components/ui/how-it-works";
 import { ExpandRouteMap } from "@/components/ui/expand-map";
 import { RandomLetterSwap } from "@/components/ui/random-letter-swap";
 import BookingWidget from "@/components/ui/booking-widget";
+import FleetSelector from "@/components/ui/fleet-selector";
 import AboutSection from "@/components/ui/about-section";
 
 /* ─── Fleet Data ─── */
@@ -283,76 +284,31 @@ export default function HomePage() {
 </section>
 
 {/*  ─── FLEET SECTION ───  */}
-<section className="section-pad bg-[#0a0a0a] border-t border-white/5" id="fleet-section">
-  <div className="container">
-    <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-16 reveal">
+<section className="bg-[#080808] border-t border-white/5" id="fleet-section">
+  {/* Header */}
+  <div className="container py-16">
+    <div className="flex flex-col md:flex-row md:items-end md:justify-between reveal">
       <div>
         <p className="text-[11px] font-semibold tracking-[0.2em] uppercase text-white/50 mb-3">The Fleet</p>
-        <h2 className="text-4xl md:text-5xl font-light text-white leading-tight">Ready for every journey.</h2>
+        <h2
+          className="text-white leading-none"
+          style={{
+            fontSize: "clamp(32px, 5vw, 56px)",
+            fontFamily: "Georgia, 'Times New Roman', serif",
+            fontStyle: "italic",
+            fontWeight: 400,
+          }}
+        >
+          Ready for every journey.
+        </h2>
       </div>
-      <p className="text-white/50 text-sm max-w-xs mt-4 md:mt-0 leading-relaxed">Every booking guarantees a premium vehicle, meticulously maintained for executive demands.</p>
-    </div>
-    <div className="fleet-grid">
-      {/*  SUV Card  */}
-      <div className="fleet-card reveal">
-        <div className="fleet-img-wrap">
-          <img src="fleet_suv_black.png" alt="Cadillac Escalade Luxury SUV" className="fleet-img" />
-          <div className="fleet-img-overlay"></div>
-          <div className="fleet-badge">Most Popular</div>
-        </div>
-        <div className="fleet-info">
-          <div className="fleet-info-top">
-            <h3 className="fleet-name">Luxury SUV</h3>
-            <p className="fleet-models">Cadillac Escalade · GMC Yukon Denali · Chevrolet Suburban</p>
-          </div>
-          <p className="fleet-desc">Spacious luxury SUVs designed for airport transfers, families, executives and groups. Maximum comfort for any journey.</p>
-          <div className="fleet-specs">
-            <span className="spec"><span className="spec-icon">👤</span> Up to 6 passengers</span>
-            <span className="spec"><span className="spec-icon">🧳</span> 6 bags</span>
-          </div>
-          <button className="fleet-cta" onClick={() => openFleet("suv")}>View SUV <span>→</span></button>
-        </div>
-      </div>
-      {/*  Sedan Card  */}
-      <div className="fleet-card reveal">
-        <div className="fleet-img-wrap">
-          <img src="fleet_sedan_black.png" alt="Executive Sedan" className="fleet-img" />
-          <div className="fleet-img-overlay"></div>
-        </div>
-        <div className="fleet-info">
-          <div className="fleet-info-top">
-            <h3 className="fleet-name">Executive Sedan</h3>
-            <p className="fleet-models">Mercedes-Benz S-Class · BMW 7 Series · Cadillac CT6</p>
-          </div>
-          <p className="fleet-desc">Discreet, refined transportation for executives and private clients. The pinnacle of understated luxury.</p>
-          <div className="fleet-specs">
-            <span className="spec"><span className="spec-icon">👤</span> Up to 3 passengers</span>
-            <span className="spec"><span className="spec-icon">🧳</span> 3 bags</span>
-          </div>
-          <button className="fleet-cta" onClick={() => openFleet("sedan")}>View Sedan <span>→</span></button>
-        </div>
-      </div>
-      {/*  Jet Sprinter Van Card  */}
-      <div className="fleet-card reveal">
-        <div className="fleet-img-wrap">
-          <img src="fleet_jet_sprinter.png" alt="Executive Jet Sprinter" className="fleet-img" />
-          <div className="fleet-img-overlay"></div>
-        </div>
-        <div className="fleet-info">
-          <div className="fleet-info-top">
-            <h3 className="fleet-name">Executive Jet Sprinter</h3>
-            <p className="fleet-models">Mercedes-Benz Sprinter Executive</p>
-          </div>
-          <p className="fleet-desc">A private jet experience on wheels. Premium transportation for executive teams, featuring reclining captain chairs and ambient lighting.</p>
-          <div className="fleet-specs">
-            <span className="spec"><span className="spec-icon">👥</span> Up to 10 passengers</span>
-            <span className="spec"><span className="spec-icon">🥂</span> VIP Amenities</span>
-          </div>
-          <button className="fleet-cta" onClick={() => openFleet("sprinter")}>View Sprinter <span>→</span></button>
-        </div>
-      </div>
+      <p className="text-white/40 text-sm max-w-xs mt-4 md:mt-0 leading-relaxed">
+        Every booking guarantees a class of vehicle. Our fleet is meticulously maintained for executive demands.
+      </p>
     </div>
   </div>
+  {/* Selector */}
+  <FleetSelector onReserve={openComingSoon} />
 </section>
 
 
