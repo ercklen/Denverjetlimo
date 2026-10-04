@@ -6,32 +6,29 @@ const FLEET = [
   {
     id: "sedan",
     tier: "Executive Sedan",
-    name: "Cadillac CT6",
-    watermark: "SEDAN",
+    name: "Mercedes-Benz S-Class",
     orSimilar: "or similar",
     passengers: 3,
     luggage: 3,
-    img: "/fleet_sedan_black.png",
+    img: "/fleet_sedan_cutout.png",
   },
   {
     id: "suv",
     tier: "Full-Size SUV",
     name: "Cadillac Escalade",
-    watermark: "ESCALADE",
     orSimilar: "or similar",
     passengers: 6,
     luggage: 6,
-    img: "/fleet_suv_black.png",
+    img: "/fleet_escalade_cutout.png",
   },
   {
     id: "sprinter",
     tier: "Executive Van",
     name: "Mercedes-Benz Sprinter",
-    watermark: "SPRINTER",
     orSimilar: "or similar",
     passengers: 10,
     luggage: 10,
-    img: "/fleet_jet_sprinter.png",
+    img: "/fleet_sprinter_cutout.png",
   },
 ];
 
@@ -67,32 +64,7 @@ export function FleetSelector({ onReserve }: { onReserve?: () => void }) {
         minHeight: "580px",
       }}
     >
-      {/* ── Watermark ── */}
-      <div
-        className="absolute inset-0 flex items-center justify-center pointer-events-none"
-        aria-hidden="true"
-        style={{
-          opacity: animating ? 0 : 0.07,
-          transition: "opacity 0.3s ease",
-        }}
-      >
-        <span
-          style={{
-            fontSize: "clamp(80px, 18vw, 200px)",
-            fontWeight: 800,
-            letterSpacing: "-0.02em",
-            color: "#c9a84c",
-            lineHeight: 1,
-            userSelect: "none",
-            fontFamily: "Inter, sans-serif",
-            transition: "opacity 0.3s ease",
-          }}
-        >
-          {vehicle.watermark}
-        </span>
-      </div>
-
-      {/* ── Left nav ── */}
+      {/* ── Vehicle image ── */}}
       <button
         onClick={() => navigate("left")}
         className="absolute left-4 md:left-10 top-1/2 -translate-y-1/2 flex items-center gap-2 group z-10"
@@ -135,7 +107,8 @@ export function FleetSelector({ onReserve }: { onReserve?: () => void }) {
               ? `translateX(${dir === "right" ? "-60px" : "60px"}) scale(0.97)`
               : "translateX(0) scale(1)",
             transition: "opacity 0.3s ease, transform 0.3s ease",
-            filter: "drop-shadow(0 30px 60px rgba(0,0,0,0.8))",
+            filter: "drop-shadow(0 30px 60px rgba(0,0,0,0.9))",
+            mixBlendMode: "multiply" as const,
           }}
         />
       </div>
