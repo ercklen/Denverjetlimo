@@ -1,28 +1,36 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
   <!-- Background -->
   <rect width="512" height="512" fill="#080808" rx="80"/>
-  <!-- Car body - main shell -->
-  <path d="M96 300 L96 340 L416 340 L416 300 L380 300 L340 220 L280 200 L200 200 L160 220 L120 300 Z" fill="#c9a84c"/>
-  <!-- Cabin/roof -->
-  <path d="M168 300 L200 230 L280 212 L330 212 L368 300 Z" fill="#080808" opacity="0.5"/>
+
+  <!-- Car body - sleek sedan silhouette -->
+  <path d="M72 308 L72 346 L440 346 L440 308 L400 308 L355 228 L290 208 L220 208 L170 228 L112 308 Z" fill="#ffffff"/>
+
+  <!-- Cabin/roof - dark tinted -->
+  <path d="M178 308 L215 238 L290 220 L340 220 L378 308 Z" fill="#0a0a0a" opacity="0.85"/>
+
   <!-- Windows -->
-  <path d="M210 295 L222 240 L270 228 L270 295 Z" fill="#080808" opacity="0.7"/>
-  <path d="M278 295 L278 228 L322 235 L350 295 Z" fill="#080808" opacity="0.7"/>
+  <path d="M222 302 L232 248 L284 235 L284 302 Z" fill="#0a0a0a" opacity="0.9"/>
+  <path d="M292 302 L292 235 L338 242 L362 302 Z" fill="#0a0a0a" opacity="0.9"/>
+
   <!-- Window divider -->
-  <rect x="272" y="228" width="6" height="67" fill="#c9a84c"/>
-  <!-- Front wheel -->
-  <circle cx="155" cy="340" r="42" fill="#080808" stroke="#c9a84c" stroke-width="10"/>
-  <circle cx="155" cy="340" r="18" fill="#c9a84c"/>
-  <!-- Rear wheel -->
-  <circle cx="357" cy="340" r="42" fill="#080808" stroke="#c9a84c" stroke-width="10"/>
-  <circle cx="357" cy="340" r="18" fill="#c9a84c"/>
-  <!-- Headlight -->
-  <ellipse cx="106" cy="305" rx="14" ry="8" fill="#fff" opacity="0.85"/>
+  <rect x="286" y="235" width="5" height="67" fill="#ffffff" opacity="0.6"/>
+
+  <!-- Front wheel arch -->
+  <circle cx="148" cy="346" r="44" fill="#0a0a0a"/>
+  <circle cx="148" cy="346" r="44" fill="none" stroke="#ffffff" stroke-width="8"/>
+  <circle cx="148" cy="346" r="16" fill="#ffffff" opacity="0.8"/>
+
+  <!-- Rear wheel arch -->
+  <circle cx="364" cy="346" r="44" fill="#0a0a0a"/>
+  <circle cx="364" cy="346" r="44" fill="none" stroke="#ffffff" stroke-width="8"/>
+  <circle cx="364" cy="346" r="16" fill="#ffffff" opacity="0.8"/>
+
+  <!-- Headlight glow -->
+  <ellipse cx="86" cy="312" rx="15" ry="8" fill="#ffffff" opacity="0.9"/>
+
   <!-- Taillight -->
-  <ellipse cx="406" cy="305" rx="14" ry="8" fill="#ff4444" opacity="0.75"/>
-  <!-- Door line -->
-  <line x1="272" y1="300" x2="272" y2="340" stroke="#080808" stroke-width="4"/>
-  <!-- Bumpers -->
-  <rect x="88" y="310" width="22" height="14" rx="4" fill="#c9a84c" opacity="0.7"/>
-  <rect x="402" y="310" width="22" height="14" rx="4" fill="#c9a84c" opacity="0.7"/>
+  <ellipse cx="426" cy="312" rx="12" ry="6" fill="#ffffff" opacity="0.5"/>
+
+  <!-- ✦ star mark top-right -->
+  <text x="400" y="130" font-size="56" font-family="serif" fill="#ffffff" opacity="0.7" text-anchor="middle">✦</text>
 </svg>
