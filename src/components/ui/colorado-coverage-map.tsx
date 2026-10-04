@@ -124,6 +124,12 @@ export function ColoradoCoverageMap() {
             const isHov = hovered === dest.id;
             const isHub = "isHub" in dest && Boolean(dest.isHub);
             const highlight = Boolean(isActive || isHov);
+            const labelText = isHub
+              ? ((dest as typeof HUB).shortName ?? dest.name)
+              : dest.name;
+            const labelWidth = isHub
+              ? labelText.length * 6.5 + 12
+              : labelText.length * 5.5 + 12;
 
             return (
               <g
@@ -184,7 +190,7 @@ export function ColoradoCoverageMap() {
                   <rect
                     x={dest.x + (isHub ? 12 : 8)}
                     y={dest.y - 10}
-                    width={isHub ? dest.shortName!.length * 6.5 + 12 : dest.name.length * 5.5 + 12}
+                    width={labelWidth}
                     height={20}
                     rx={3}
                     fill="#c9a84c"
@@ -199,7 +205,7 @@ export function ColoradoCoverageMap() {
                     fill="#0a0a0a"
                     style={{ textTransform: "uppercase", fontFamily: "Inter, sans-serif" }}
                   >
-                    {isHub ? dest.shortName : dest.name.toUpperCase()}
+                    {labelText.toUpperCase()}
                   </text>
                 </g>
               </g>
