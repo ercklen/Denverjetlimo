@@ -355,8 +355,6 @@ export default function HomePage() {
   </div>
 </section>
 
-  </div>
-</section>
 
 {/*  ─── ABOUT SECTION ───  */}
 <AboutSection />
